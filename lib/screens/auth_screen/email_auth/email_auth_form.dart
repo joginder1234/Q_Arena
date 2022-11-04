@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:q_arena_user_application/components/app_textField.dart';
 import 'package:q_arena_user_application/components/expanded_btn.dart';
+import 'package:q_arena_user_application/screens/auth_screen/otp_view.dart';
 import 'package:q_arena_user_application/services/app_services.dart';
-import 'package:q_arena_user_application/services/style_sheet.dart';
 
 class EmailLoginView extends StatefulWidget {
   const EmailLoginView({super.key});
@@ -34,7 +34,8 @@ class _EmailLoginViewState extends State<EmailLoginView> {
           AppServices.addHeight(15.h),
           ExpandedButtonView(
             btnName: "Register",
-            onPress: () {},
+            onPress: () =>
+                AppServices.pushTo(context, OtpVerificationView(isEmail: true)),
           )
         ],
       ),

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_toggle_tab/flutter_toggle_tab.dart';
 import 'package:q_arena_user_application/components/custome_tab_switch.dart';
 import 'package:q_arena_user_application/components/session_divider.dart';
 import 'package:q_arena_user_application/components/social_icon_button.dart';
+import 'package:q_arena_user_application/screens/auth_screen/form_footer_section.dart';
 import 'package:q_arena_user_application/screens/auth_screen/phone_auth/phone_auth_form.dart';
 import 'package:q_arena_user_application/services/icons.dart';
 
 import '../../services/app_services.dart';
+import '../../services/base_components.dart';
 import '../../services/style_sheet.dart';
 import 'email_auth/email_auth_form.dart';
 
@@ -19,11 +20,6 @@ class AuthTabBarView extends StatefulWidget {
 }
 
 class _AuthTabBarViewState extends State<AuthTabBarView> {
-  List<String> socialBtn = [
-    AppIcons.fbLogo,
-    AppIcons.googleLogo,
-    AppIcons.appleLogo
-  ];
   List<String> tabBar = ["Email", "Phone Number"];
   int activeTabIndex = 0;
   @override
@@ -53,33 +49,9 @@ class _AuthTabBarViewState extends State<AuthTabBarView> {
                 ? const EmailLoginView()
                 : const PhoneAuthView(),
             AppServices.addHeight(15.h),
-            SessionTextDivider(text: "Or Register with"),
-            AppServices.addHeight(15.h),
-            Row(
-              children: List.generate(
-                  socialBtn.length,
-                  (i) => Expanded(
-                          child: SocialButtonView(
-                        icon: socialBtn[i],
-                        onTap: () {},
-                        index: (i == 0 || i == socialBtn.length - 1) ? 0 : i,
-                      ))),
-            ),
+            FormFooterSectionView(dividerText: "Or Register with"),
             AppServices.addHeight(30.h),
-            TextButton(
-              onPressed: () {},
-              child: Text.rich(TextSpan(
-                  text: "Already have an account? ",
-                  style: AppStyles.bodyMedium
-                      .copyWith(color: AppStyles.textColorBlack100),
-                  children: [
-                    TextSpan(
-                        text: "Login Now",
-                        style: AppStyles.bodyMedium.copyWith(
-                            fontWeight: FontWeight.w800,
-                            color: AppStyles.btnColorPrimary))
-                  ])),
-            )
+            footerTextBtn("Already have an account?", "Login Now")
           ],
         ),
       )),

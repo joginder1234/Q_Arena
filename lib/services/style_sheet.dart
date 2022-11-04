@@ -17,6 +17,8 @@ class AppStyles {
 
   /* Application Text Styles*/
 
+  static TextStyle largeHeader =
+      TextStyle(fontSize: 30.sp, fontWeight: FontWeight.w700);
   static TextStyle heading1 =
       TextStyle(fontSize: 24.sp, fontWeight: FontWeight.w700);
   static TextStyle heading2 =
