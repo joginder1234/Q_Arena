@@ -20,6 +20,7 @@ class PhoneAuthView extends StatefulWidget {
 class _PhoneAuthViewState extends State<PhoneAuthView> {
   final TextEditingController _phoneCtrl = TextEditingController();
   final FocusNode _keyboardfocus = FocusNode();
+  bool radioValue = false;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -27,7 +28,7 @@ class _PhoneAuthViewState extends State<PhoneAuthView> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          AppServices.addHeight(30.h),
+          AppServices.addHeight(50.h),
           InternationalPhoneNumberInput(
               inputBorder: OutlineInputBorder(borderSide: BorderSide.none),
               textFieldController: _phoneCtrl,
@@ -40,26 +41,36 @@ class _PhoneAuthViewState extends State<PhoneAuthView> {
               ),
               onInputChanged: (phone) => print(phone.phoneNumber)),
           Divider(),
-          AppServices.addHeight(15.h),
-          Text.rich(TextSpan(
-              text: "By Signing up, you agree to the ",
-              style: AppStyles.bodySmall
-                  .copyWith(color: AppStyles.textColorBlack50),
-              children: [
-                TextSpan(
-                    text: "Term of Service",
+          AppServices.addHeight(20.h),
+          Row(
+            children: [
+              Checkbox(
+                  value: radioValue,
+                  onChanged: (v) => setState(() => radioValue = !radioValue)),
+              Expanded(
+                  child: SizedBox(
+                child: Text.rich(TextSpan(
+                    text: "By Signing up, you agree to the ",
                     style: AppStyles.bodySmall
-                        .copyWith(color: AppStyles.textColorBlack100)),
-                TextSpan(
-                    text: " and ",
-                    style: AppStyles.bodySmall
-                        .copyWith(color: AppStyles.textColorBlack50)),
-                TextSpan(
-                    text: "Privacy Policy",
-                    style: AppStyles.bodySmall
-                        .copyWith(color: AppStyles.textColorBlack100)),
-              ])),
-          AppServices.addHeight(60.h),
+                        .copyWith(color: AppStyles.textColorBlack50),
+                    children: [
+                      TextSpan(
+                          text: "Term of Service",
+                          style: AppStyles.bodySmall
+                              .copyWith(color: AppStyles.textColorBlack100)),
+                      TextSpan(
+                          text: " and ",
+                          style: AppStyles.bodySmall
+                              .copyWith(color: AppStyles.textColorBlack50)),
+                      TextSpan(
+                          text: "Privacy Policy",
+                          style: AppStyles.bodySmall
+                              .copyWith(color: AppStyles.textColorBlack100)),
+                    ])),
+              ))
+            ],
+          ),
+          AppServices.addHeight(120.h),
           ExpandedButtonView(
             btnName: "Send Otp",
             onPress: () => AppServices.pushTo(

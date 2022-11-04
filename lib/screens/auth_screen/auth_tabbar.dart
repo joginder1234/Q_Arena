@@ -20,39 +20,54 @@ class AuthTabBarView extends StatefulWidget {
 }
 
 class _AuthTabBarViewState extends State<AuthTabBarView> {
-  List<String> tabBar = ["Email", "Phone Number"];
   int activeTabIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppStyles.whiteColor,
       body: SafeArea(
-          child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 15.w),
-        child: Column(
-          children: [
-            AppServices.addHeight(30.h),
-            Center(
-              child: Text("Sign in to continue",
-                  textScaleFactor: 1.0, style: AppStyles.bodyLarge),
-            ),
-            AppServices.addHeight(10.h),
-            CustomTabSwitch(
-                values: tabBar,
-                activeStyle:
-                    AppStyles.bodyMedium.copyWith(color: AppStyles.whiteColor),
-                inActiveStyle: AppStyles.bodyMedium,
-                activeIndex: activeTabIndex,
-                onValueChange: (value) =>
-                    setState(() => activeTabIndex = value)),
-            activeTabIndex == 0
-                ? const EmailLoginView()
-                : const PhoneAuthView(),
-            AppServices.addHeight(15.h),
-            FormFooterSectionView(dividerText: "Or Register with"),
-            AppServices.addHeight(30.h),
-            footerTextBtn("Already have an account?", "Login Now")
-          ],
+          child: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          child: Column(
+            children: [
+              AppServices.addHeight(90.h),
+              Center(
+                child: Text("Sign in to continue",
+                    textScaleFactor: 1.0, style: AppStyles.bodyLarge),
+              ),
+              AppServices.addHeight(10.h),
+              CustomTabSwitch(
+                  values: [
+                    Text(
+                      "Email",
+                      style: AppStyles.bodySmall.copyWith(
+                          color: activeTabIndex == 0
+                              ? AppStyles.whiteColor
+                              : AppStyles.textColorBlack100),
+                    ),
+                    Text("Phone Number",
+                        style: AppStyles.bodySmall.copyWith(
+                            color: activeTabIndex != 0
+                                ? AppStyles.whiteColor
+                                : AppStyles.textColorBlack100))
+                  ],
+                  activeStyle:
+                      AppStyles.bodySmall.copyWith(color: AppStyles.whiteColor),
+                  inActiveStyle: AppStyles.bodySmall,
+                  activeIndex: activeTabIndex,
+                  onValueChange: (value) =>
+                      setState(() => activeTabIndex = value)),
+              activeTabIndex == 0
+                  ? const EmailLoginView()
+                  : const PhoneAuthView(),
+              AppServices.addHeight(35.h),
+              FormFooterSectionView(dividerText: "Or Register with"),
+              AppServices.addHeight(54.h),
+              footerTextBtn("Already have an account?", "Login Now")
+            ],
+          ),
         ),
       )),
     );

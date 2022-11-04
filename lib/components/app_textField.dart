@@ -14,11 +14,12 @@ class AppTextField extends StatelessWidget {
       controller: controller,
       decoration: InputDecoration(
           contentPadding:
-              EdgeInsets.symmetric(horizontal: 15.w, vertical: 12.h),
+              EdgeInsets.symmetric(horizontal: 18.w, vertical: 18.h),
           hintText: hint,
-          hintStyle: AppStyles.bodyMedium,
+          hintStyle:
+              AppStyles.bodyMedium.copyWith(color: AppStyles.textColorBlack50),
           border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10.r),
+              borderRadius: BorderRadius.circular(8.r),
               borderSide: const BorderSide(color: AppStyles.borderColor))),
     );
   }

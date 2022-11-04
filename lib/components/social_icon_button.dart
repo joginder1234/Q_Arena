@@ -21,14 +21,14 @@ class SocialButtonView extends StatelessWidget {
       onTap: () => onTap(),
       child: Container(
         margin: index == 0
-            ? EdgeInsets.symmetric(horizontal: 5.w)
+            ? EdgeInsets.symmetric(horizontal: 8.w)
             : EdgeInsets.zero,
-        padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 15.w),
+        padding: EdgeInsets.symmetric(vertical: 15.h, horizontal: 15.w),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             border: Border.all(color: AppStyles.borderColor)),
         child: Center(
-          child: Image.asset(icon, height: 20.h),
+          child: Image.asset(icon, height: 26.h),
         ),
       ),
     );

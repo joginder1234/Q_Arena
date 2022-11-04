@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:q_arena_user_application/components/expanded_btn.dart';
 import 'package:q_arena_user_application/components/password_textfield.dart';
+import 'package:q_arena_user_application/screens/auth_screen/auth_completion.dart';
 import 'package:q_arena_user_application/screens/auth_screen/form_footer_section.dart';
 import 'package:q_arena_user_application/services/app_services.dart';
 
@@ -34,16 +35,16 @@ class _CreatePhonePassViewState extends State<CreatePhonePassView> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            AppServices.addHeight(30.h),
+            AppServices.addHeight(80.h),
             Text("Create a Password", style: AppStyles.largeHeader),
-            AppServices.addHeight(50.h),
+            AppServices.addHeight(80.h),
             PasswordTextFieldView(
               hint: "Enter your password",
               isObsecure: _textObsecure,
               onSuffixPressed: () =>
                   setState(() => _textObsecure = !_textObsecure),
             ),
-            AppServices.addHeight(50.h),
+            AppServices.addHeight(70.h),
             Align(
               alignment: Alignment.centerRight,
               child: TextButton(
@@ -52,11 +53,14 @@ class _CreatePhonePassViewState extends State<CreatePhonePassView> {
                       style: AppStyles.bodyMedium
                           .copyWith(color: AppStyles.textColorBlack100))),
             ),
-            AppServices.addHeight(15.h),
-            ExpandedButtonView(btnName: "Set Phone Password", onPress: () {}),
             AppServices.addHeight(30.h),
+            ExpandedButtonView(
+                btnName: "Set Phone Password",
+                onPress: () => AppServices.pushTo(
+                    context, AuthCompletionDialog(isEmail: false))),
+            AppServices.addHeight(35.h),
             FormFooterSectionView(dividerText: "Or Login with"),
-            AppServices.addHeight(120.h),
+            AppServices.addHeight(116.h),
             footerTextBtn("Don't have an account?", "Register Now")
           ],
         ),

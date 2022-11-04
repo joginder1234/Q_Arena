@@ -35,7 +35,7 @@ class _OtpVerificationViewState extends State<OtpVerificationView> {
       ),
       body: SafeArea(
           child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 15.w),
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -45,26 +45,27 @@ class _OtpVerificationViewState extends State<OtpVerificationView> {
             Text("Enter the verification code we just sent on your Phone ",
                 style: AppStyles.bodyMedium
                     .copyWith(color: AppStyles.textColorBlack50)),
-            AppServices.addHeight(20.h),
+            AppServices.addHeight(32.h),
             OTPTextField(
               controller: _otpCtrl,
               length: 4,
               width: AppServices.getScreenWidth(context),
-              style: AppStyles.bodyLarge,
-              fieldWidth: 50.w,
+              style: AppStyles.heading1,
+              fieldWidth: 70.w,
               textFieldAlignment: MainAxisAlignment.spaceEvenly,
               onCompleted: (value) => setState(() => _controller.text = value),
-              contentPadding: EdgeInsets.symmetric(horizontal: 10.w),
+              contentPadding:
+                  EdgeInsets.symmetric(horizontal: 17.w, vertical: 17.h),
               fieldStyle: FieldStyle.box,
               otpFieldStyle: OtpFieldStyle(
                   focusBorderColor: AppStyles.btnColorPrimary,
                   borderColor: AppStyles.btnColorPrimary),
             ),
-            AppServices.addHeight(30.h),
+            AppServices.addHeight(38.h),
             ExpandedButtonView(btnName: "Verify", onPress: () => getRoute()),
             Expanded(child: SizedBox()),
             FormFooterSectionView(dividerText: "Or Register with"),
-            AppServices.addHeight(40.h),
+            AppServices.addHeight(56.h),
             footerTextBtn("Didn't received code?", "Resend"),
             AppServices.addHeight(30.h)
           ],
@@ -76,7 +77,8 @@ class _OtpVerificationViewState extends State<OtpVerificationView> {
   getRoute() {
     switch (widget.isEmail) {
       case true:
-        return AppServices.pushTo(context, AuthCompletionDialog());
+        return AppServices.pushTo(
+            context, AuthCompletionDialog(isEmail: widget.isEmail));
       default:
         return AppServices.pushTo(context, CreatePhonePassView());
     }

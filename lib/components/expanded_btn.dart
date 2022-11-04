@@ -24,14 +24,15 @@ class ExpandedButtonView extends StatelessWidget {
       child: TextButton(
           style: ButtonStyle(
               shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.r))),
+                  borderRadius: BorderRadius.circular(8.r))),
               padding: MaterialStateProperty.all(
-                  EdgeInsets.symmetric(vertical: 12.h)),
+                  EdgeInsets.symmetric(vertical: 19.h)),
               backgroundColor: MaterialStateProperty.all(bgColor)),
           onPressed: () => onPress(),
           child: Text(
             btnName,
-            style: AppStyles.bodyMedium.copyWith(color: txtColor),
+            style: AppStyles.bodyMedium
+                .copyWith(color: txtColor, fontWeight: FontWeight.w700),
           )),
     );
   }

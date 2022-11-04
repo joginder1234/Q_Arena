@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         home: AuthTabBarView(),
       ),
       splitScreenMode: false,
-      designSize: ScreenUtil.defaultSize,
+      designSize: const Size(390, 844),
     );
   }
 }

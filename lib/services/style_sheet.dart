@@ -6,8 +6,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class AppStyles {
   /* Application Color Plate */
 
-  static const Color redHighLightColor = Color(0xffCF0A0A);
-  static const Color btnColorPrimary = Color(0xffCF0A0A);
+  static const Color redHighLightColor = Color(0xffE7440E);
+  static const Color btnColorPrimary = Color(0xffE7440E);
   static const Color btnColorSecondary = Color(0xff000000);
   static const Color textColorBlack100 = Color(0xff000000);
   static const Color textColorBlack50 = Color(0xffB2B2B2);
@@ -24,7 +24,7 @@ class AppStyles {
   static TextStyle heading2 =
       TextStyle(fontSize: 20.sp, fontWeight: FontWeight.w700);
   static TextStyle bodyLarge =
-      TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w500);
+      TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w400);
   static TextStyle bodyMedium =
       TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w400);
   static TextStyle bodySmall =

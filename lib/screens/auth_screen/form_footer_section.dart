@@ -16,7 +16,7 @@ class FormFooterSectionView extends StatelessWidget {
     return Column(
       children: [
         SessionTextDivider(text: dividerText),
-        AppServices.addHeight(15.h),
+        AppServices.addHeight(22.h),
         Row(
           children: List.generate(
               socialBtn.length,

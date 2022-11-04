@@ -24,7 +24,7 @@ class PasswordTextFieldView extends StatelessWidget {
           hintStyle:
               AppStyles.bodyMedium.copyWith(color: AppStyles.textColorBlack50),
           contentPadding:
-              EdgeInsets.symmetric(horizontal: 15.w, vertical: 12.h),
+              EdgeInsets.symmetric(horizontal: 18.w, vertical: 18.h),
           suffixIcon: IconButton(
               onPressed:
                   onSuffixPressed != null ? () => onSuffixPressed!() : null,
@@ -32,7 +32,7 @@ class PasswordTextFieldView extends StatelessWidget {
                   ? Icons.remove_red_eye_outlined
                   : Icons.remove_red_eye)),
           border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10.r),
+              borderRadius: BorderRadius.circular(8.r),
               borderSide: BorderSide(color: AppStyles.borderColor))),
     );
   }

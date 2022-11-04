@@ -3,15 +3,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../services/style_sheet.dart';
 
-class flexibleButton extends StatelessWidget {
+class FlexibleButton extends StatelessWidget {
   String btnName;
   Color backGroundColor, textColor;
   Function onPress;
-  flexibleButton(
+  FlexibleButton(
       {Key? key,
       required this.btnName,
-      required this.backGroundColor,
-      required this.textColor,
+      this.backGroundColor = AppStyles.redHighLightColor,
+      this.textColor = AppStyles.whiteColor,
       required this.onPress})
       : super(key: key);
 
@@ -21,9 +21,9 @@ class flexibleButton extends StatelessWidget {
         onPressed: () => onPress(),
         style: ButtonStyle(
             shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.r))),
+                borderRadius: BorderRadius.circular(15.r))),
             padding: MaterialStateProperty.all(
-                EdgeInsets.symmetric(horizontal: 60.w, vertical: 10.h)),
+                EdgeInsets.symmetric(horizontal: 60.w, vertical: 20.h)),
             backgroundColor: MaterialStateProperty.all(backGroundColor)),
         child: Text(
           "Next",

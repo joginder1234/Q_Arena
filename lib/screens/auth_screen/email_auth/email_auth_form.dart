@@ -25,13 +25,13 @@ class _EmailLoginViewState extends State<EmailLoginView> {
         mainAxisSize: MainAxisSize.min,
         children: [
           AppTextField(hint: "Username", controller: _username),
-          AppServices.addHeight(10.h),
+          AppServices.addHeight(12.h),
           AppTextField(hint: "Email", controller: _email),
-          AppServices.addHeight(10.h),
+          AppServices.addHeight(12.h),
           AppTextField(hint: "Password", controller: _pass),
-          AppServices.addHeight(10.h),
+          AppServices.addHeight(12.h),
           AppTextField(hint: "Confirm Password", controller: _confirmPass),
-          AppServices.addHeight(15.h),
+          AppServices.addHeight(30.h),
           ExpandedButtonView(
             btnName: "Register",
             onPress: () =>

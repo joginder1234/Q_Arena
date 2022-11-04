@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:q_arena_user_application/services/style_sheet.dart';
 
 class CustomTabSwitch extends StatelessWidget {
-  List<String> values;
+  List<Widget> values;
   double radius;
   Color activeColor, inActiveColor;
   TextStyle activeStyle, inActiveStyle;
@@ -36,17 +36,14 @@ class CustomTabSwitch extends StatelessWidget {
                   child: InkWell(
                     onTap: () => onValueChange(index),
                     child: Container(
-                      padding: EdgeInsets.symmetric(vertical: 10.h),
+                      padding: EdgeInsets.symmetric(vertical: 17.h),
                       decoration: BoxDecoration(
                           color: activeIndex == index
                               ? activeColor
                               : inActiveColor,
                           borderRadius: BorderRadius.circular(radius)),
                       child: Center(
-                        child: Text(values[index],
-                            style: activeIndex == index
-                                ? activeStyle
-                                : inActiveStyle),
+                        child: values[index],
                       ),
                     ),
                   ),

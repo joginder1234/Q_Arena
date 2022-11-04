@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:q_arena_user_application/services/icons.dart';
 import 'package:q_arena_user_application/services/style_sheet.dart';
 
@@ -22,5 +23,24 @@ footerTextBtn(String btnText1, String btnText2) => Center(
                       fontWeight: FontWeight.w800,
                       color: AppStyles.btnColorPrimary))
             ])),
+      ),
+    );
+
+stepCreator(int currentStep) => Align(
+      alignment: Alignment.centerRight,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 9.w, vertical: 9.h),
+        height: 50.w,
+        width: 50.w,
+        decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border: Border.all(color: AppStyles.redHighLightColor),
+            color: AppStyles.redHighLightColor.withOpacity(0.1)),
+        child: Center(
+          child: Text.rich(TextSpan(
+              text: "$currentStep",
+              style: AppStyles.largeHeader,
+              children: [TextSpan(text: "/6", style: AppStyles.bodySmall)])),
+        ),
       ),
     );
