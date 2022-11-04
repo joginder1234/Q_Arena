@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:q_arena_user_application/components/custome_tab_switch.dart';
 import 'package:q_arena_user_application/components/flexible_button.dart';
+import 'package:q_arena_user_application/screens/preference_selections/play_with.dart';
 import 'package:q_arena_user_application/services/app_services.dart';
 import 'package:q_arena_user_application/services/base_components.dart';
 import 'package:q_arena_user_application/services/icons.dart';
@@ -112,7 +113,11 @@ class _GenderScreenState extends State<GenderScreen> {
               onChanged: (value) => setState(() => initAge = value),
             ),
             AppServices.addHeight(140.h),
-            FlexibleButton(btnName: "Next", onPress: () {})
+            FlexibleButton(
+                btnName: "Next",
+                onPress: () {
+                  AppServices.pushTo(context, PlayWith());
+                })
           ],
         ),
       )),
