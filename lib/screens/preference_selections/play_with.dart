@@ -26,7 +26,7 @@ class _PlayWithState extends State<PlayWith> {
         child: Column(
           children: [
             AppServices.addHeight(5.h),
-            stepCreator(3),
+            stepCreator(3, context),
             AppServices.addHeight(18.h),
             Text("You want to play with?", style: AppStyles.heading2),
             AppServices.addHeight(13.h),
