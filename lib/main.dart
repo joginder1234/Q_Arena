@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:q_arena_user_application/app_config.dart';
 import 'package:q_arena_user_application/screens/auth_screen/auth_tabBar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         home: AuthTabBarView(),
       ),
       splitScreenMode: false,
-      designSize: const Size(390, 844),
+      designSize: const Size(AppConfig.designWidth, AppConfig.designHeight),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:q_arena_user_application/app_config.dart';
 
 class AppServices {
   /* Height and Width Factors */
@@ -13,4 +14,7 @@ class AppServices {
   /* Navigation and routing */
   static pushTo(BuildContext context, Widget screen) =>
       Navigator.of(context).push(MaterialPageRoute(builder: (_) => screen));
+
+  static double scaleFactor(BuildContext context) =>
+      AppConfig.designWidth / getScreenWidth(context);
 }

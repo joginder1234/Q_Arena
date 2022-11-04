@@ -26,7 +26,7 @@ class _DateOfBirthState extends State<DateOfBirth> {
       child: Column(
         children: [
           AppServices.addHeight(5.h),
-          stepCreator(1),
+          stepCreator(1, context),
           Text("Date Of Birth", style: AppStyles.heading2),
           AppServices.addHeight(120.h),
           Padding(

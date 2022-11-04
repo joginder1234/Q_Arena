@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:q_arena_user_application/services/app_services.dart';
 import 'package:q_arena_user_application/services/icons.dart';
 import 'package:q_arena_user_application/services/style_sheet.dart';
 
@@ -26,7 +27,7 @@ footerTextBtn(String btnText1, String btnText2) => Center(
       ),
     );
 
-stepCreator(int currentStep) => Align(
+stepCreator(int currentStep, BuildContext context) => Align(
       alignment: Alignment.centerRight,
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 9.w, vertical: 9.h),
@@ -37,10 +38,14 @@ stepCreator(int currentStep) => Align(
             border: Border.all(color: AppStyles.redHighLightColor),
             color: AppStyles.redHighLightColor.withOpacity(0.1)),
         child: Center(
-          child: Text.rich(TextSpan(
-              text: "$currentStep",
-              style: AppStyles.largeHeader,
-              children: [TextSpan(text: "/6", style: AppStyles.bodySmall)])),
+          child: Text.rich(
+              textScaleFactor: AppServices.scaleFactor(context),
+              TextSpan(
+                  text: "$currentStep",
+                  style: AppStyles.largeHeader,
+                  children: [
+                    TextSpan(text: "/6", style: AppStyles.bodySmall)
+                  ])),
         ),
       ),
     );

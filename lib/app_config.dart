@@ -7,4 +7,8 @@ class AppConfig {
 
   /* Replace this URL with your app base URL */
   static const String base_url = "";
+
+  /* do not change these values */
+  static const double designWidth = 390;
+  static const double designHeight = 844;
 }

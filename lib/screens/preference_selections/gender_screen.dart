@@ -28,7 +28,7 @@ class _GenderScreenState extends State<GenderScreen> {
         child: Column(
           children: [
             AppServices.addHeight(5.h),
-            stepCreator(2),
+            stepCreator(2, context),
             AppServices.addHeight(18.h),
             Text("I am a", style: AppStyles.heading2),
             AppServices.addHeight(13.h),
