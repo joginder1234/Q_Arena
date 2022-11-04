@@ -9,7 +9,7 @@ class AppServices {
   static getScreenHeight(BuildContext context) =>
       MediaQuery.of(context).size.height;
   static addHeight(double space) => SizedBox(height: space);
-  static addWidth(double space) => SizedBox(height: space);
+  static addWidth(double space) => SizedBox(width: space);
 
   /* Navigation and routing */
   static pushTo(BuildContext context, Widget screen) =>
