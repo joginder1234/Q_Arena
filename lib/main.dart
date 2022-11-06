@@ -5,6 +5,7 @@ import 'package:q_arena_user_application/providers/app_data_provider.dart';
 
 import 'package:q_arena_user_application/screens/auth_screen/auth_tabBar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:q_arena_user_application/splash.dart';
 
 void main() async {
   await ScreenUtil.ensureScreenSize();
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: AuthTabBarView(),
+          home: SplashView(),
         ),
       ),
       splitScreenMode: false,

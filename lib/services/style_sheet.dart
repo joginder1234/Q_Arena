@@ -14,6 +14,8 @@ class AppStyles {
   static const Color borderColor = Color(0xffdddddd);
   static const Color appbarColor = Color(0xffffffff);
   static const Color whiteColor = Color(0xffffffff);
+  static const Color onBoardbtnColorPrimary = Color(0xff9AE4CC);
+  static const Color onBoardbtnColorseconday = Color(0xff975296);
 
   /* Application Text Styles*/
 

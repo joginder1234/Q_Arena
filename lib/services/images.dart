@@ -14,4 +14,5 @@ class AppImages {
   static const String publicBanner = "assets/banner_public.png";
   static const String playMateBanner = "assets/playmate.png";
   static const String vanueBg = "assets/vanue.png";
+  static const String onBoardImage = "assets/onBoard.png";
 }
