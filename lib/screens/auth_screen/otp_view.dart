@@ -63,10 +63,10 @@ class _OtpVerificationViewState extends State<OtpVerificationView> {
             ),
             AppServices.addHeight(38.h),
             ExpandedButtonView(btnName: "Verify", onPress: () => getRoute()),
-            Expanded(child: SizedBox()),
+            AppServices.addHeight(120.h),
             FormFooterSectionView(dividerText: "Or Register with"),
             AppServices.addHeight(56.h),
-            footerTextBtn("Didn't received code?", "Resend"),
+            footerTextBtn("Didn't received code?", "Resend", () {}),
             AppServices.addHeight(30.h)
           ],
         ),

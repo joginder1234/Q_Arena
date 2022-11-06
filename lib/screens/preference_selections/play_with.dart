@@ -17,6 +17,12 @@ class PlayWith extends StatefulWidget {
 }
 
 class _PlayWithState extends State<PlayWith> {
+  List<PlayWithClass> btns = [
+    PlayWithClass(AppImages.male_avatar, "Male"),
+    PlayWithClass(AppImages.female_avatar, "Female"),
+    PlayWithClass(AppImages.trans_avatar, "Mix"),
+  ];
+  int activeBtn = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,99 +39,42 @@ class _PlayWithState extends State<PlayWith> {
             Text("This helps us create your personlized plan",
                 style: AppStyles.bodySmall),
             AppServices.addHeight(70.h),
-            Row(
-              children: [
-                GestureDetector(
-                  onTap: () {},
-                  child: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        border: Border.all(color: AppStyles.textColorBlack50)),
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
-                    child: Column(
-                      children: [
-                        Image.asset(
-                          AppImages.male_avatar,
-                          width: 102.w,
-                          height: 112.h,
+            Wrap(
+              crossAxisAlignment: WrapCrossAlignment.center,
+              alignment: WrapAlignment.center,
+              spacing: 35,
+              runSpacing: 35,
+              children: List.generate(
+                  btns.length,
+                  (i) => GestureDetector(
+                        onTap: () => setState(() => activeBtn = i),
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: i == activeBtn
+                                  ? AppStyles.redHighLightColor.withOpacity(0.1)
+                                  : AppStyles.whiteColor,
+                              borderRadius: BorderRadius.circular(15),
+                              border: Border.all(
+                                  color: AppStyles.textColorBlack50)),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 10.w, vertical: 5.h),
+                          child: Column(
+                            children: [
+                              Image.asset(
+                                btns[i].image,
+                                width: 102.w,
+                                height: 112.h,
+                              ),
+                              AppServices.addHeight(5),
+                              Text(
+                                btns[i].text,
+                                style: AppStyles.captionLarge
+                                    .copyWith(fontWeight: FontWeight.w700),
+                              )
+                            ],
+                          ),
                         ),
-                        AppServices.addHeight(5),
-                        Text(
-                          "Male",
-                          style: AppStyles.captionLarge
-                              .copyWith(fontWeight: FontWeight.w700),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-                AppServices.addWidth(40.w),
-                GestureDetector(
-                  onTap: () {},
-                  child: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        border: Border.all(color: AppStyles.textColorBlack50)),
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
-                    child: Column(
-                      children: [
-                        Image.asset(
-                          AppImages.female_avatar,
-                          width: 102.w,
-                          height: 112.h,
-                        ),
-                        AppServices.addHeight(5),
-                        Text(
-                          "Female",
-                          style: AppStyles.captionLarge
-                              .copyWith(fontWeight: FontWeight.w700),
-                        )
-                      ],
-                    ),
-                  ),
-                )
-              ],
-            ),
-            AppServices.addHeight(35.h),
-            GestureDetector(
-              onTap: () {},
-              child: Container(
-                width: 134.w,
-                height: 142.h,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    border: Border.all(color: AppStyles.textColorBlack50)),
-                padding: EdgeInsets.only(
-                    left: 20.w, right: 20.w, top: 35.h, bottom: 10.h),
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Image.asset(
-                          AppImages.male_gender_sign,
-                          height: 60.h,
-                          width: 45.w,
-                        ),
-                        Image.asset(
-                          AppImages.female_gender_sign,
-                          height: 60.h,
-                          width: 45.w,
-                        )
-                      ],
-                    ),
-                    AppServices.addHeight(10),
-                    Text(
-                      "Female",
-                      style: AppStyles.captionLarge
-                          .copyWith(fontWeight: FontWeight.w700),
-                    )
-                  ],
-                ),
-              ),
+                      )),
             ),
             AppServices.addHeight(180.h),
             FlexibleButton(
@@ -138,4 +87,9 @@ class _PlayWithState extends State<PlayWith> {
       )),
     );
   }
+}
+
+class PlayWithClass {
+  String image, text;
+  PlayWithClass(this.image, this.text);
 }

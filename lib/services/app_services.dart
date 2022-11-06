@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:q_arena_user_application/app_config.dart';
+
+import '../configs/app_config.dart';
 
 class AppServices {
   /* Height and Width Factors */

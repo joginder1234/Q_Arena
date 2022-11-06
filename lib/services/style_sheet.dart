@@ -11,7 +11,7 @@ class AppStyles {
   static const Color btnColorSecondary = Color(0xff000000);
   static const Color textColorBlack100 = Color(0xff000000);
   static const Color textColorBlack50 = Color(0xffB2B2B2);
-  static const Color borderColor = Color(0xffEEEEEE);
+  static const Color borderColor = Color(0xffdddddd);
   static const Color appbarColor = Color(0xffffffff);
   static const Color whiteColor = Color(0xffffffff);
 

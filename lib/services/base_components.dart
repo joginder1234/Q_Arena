@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:q_arena_user_application/models/basic_models.dart';
 import 'package:q_arena_user_application/services/app_services.dart';
 import 'package:q_arena_user_application/services/icons.dart';
 import 'package:q_arena_user_application/services/style_sheet.dart';
@@ -10,9 +11,10 @@ List<String> socialBtn = [
   AppIcons.appleLogo
 ];
 
-footerTextBtn(String btnText1, String btnText2) => Center(
+Widget footerTextBtn(String btnText1, String btnText2, Function ontap) =>
+    Center(
       child: TextButton(
-        onPressed: () {},
+        onPressed: () => ontap(),
         child: Text.rich(TextSpan(
             text: "$btnText1 ",
             style: AppStyles.bodyMedium
@@ -49,3 +51,11 @@ stepCreator(int currentStep, BuildContext context) => Align(
         ),
       ),
     );
+
+List<FacilityClass> facilities = [
+  FacilityClass(AppIcons.parkingIcon, "Parking Available"),
+  FacilityClass(AppIcons.wheelChairIcon, "Disabled Access"),
+  FacilityClass(AppIcons.showerIcon, "Chanding & Shower Room"),
+  FacilityClass(AppIcons.coffeeIcon, "Cafe"),
+  FacilityClass(AppIcons.trainIcon, "5 min from Metro")
+];
