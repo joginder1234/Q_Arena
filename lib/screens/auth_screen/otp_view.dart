@@ -62,7 +62,12 @@ class _OtpVerificationViewState extends State<OtpVerificationView> {
                   borderColor: AppStyles.btnColorPrimary),
             ),
             AppServices.addHeight(38.h),
-            ExpandedButtonView(btnName: "Verify", onPress: () => getRoute()),
+            Row(
+              children: [
+                ExpandedButtonView(
+                    btnName: "Verify", onPress: () => getRoute()),
+              ],
+            ),
             AppServices.addHeight(120.h),
             FormFooterSectionView(dividerText: "Or Register with"),
             AppServices.addHeight(56.h),

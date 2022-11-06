@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:q_arena_user_application/screens/preference_selections/bookingCalender.dart';
 import 'package:q_arena_user_application/services/app_services.dart';
 import 'package:q_arena_user_application/services/base_components.dart';
 import 'package:q_arena_user_application/services/icons.dart';
@@ -31,7 +30,7 @@ class _VanueDetailsViewState extends State<VanueDetailsView> {
       body: Container(
         width: AppServices.getScreenWidth(context),
         height: AppServices.getScreenHeight(context),
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage(AppImages.vanueBg), fit: BoxFit.cover)),
         child: SingleChildScrollView(
@@ -100,7 +99,14 @@ class _VanueDetailsViewState extends State<VanueDetailsView> {
                 AppServices.addHeight(35.h),
                 Center(
                   child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        showModalBottomSheet(
+                            isScrollControlled: true,
+                            context: context,
+                            builder: (BuildContext context) {
+                              return BookingCalenderView();
+                            });
+                      },
                       child: Text("View Schedule",
                           style: AppStyles.bodyMedium.copyWith(
                               fontWeight: FontWeight.w700,

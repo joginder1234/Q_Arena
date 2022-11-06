@@ -61,9 +61,14 @@ class _PhoneLoginViewState extends State<PhoneLoginView> {
                               fontWeight: FontWeight.w700))),
                 ),
                 AppServices.addHeight(30.h),
-                ExpandedButtonView(
-                    btnName: "Login",
-                    onPress: () => AppServices.pushTo(context, DateOfBirth())),
+                Row(
+                  children: [
+                    ExpandedButtonView(
+                        btnName: "Login",
+                        onPress: () =>
+                            AppServices.pushTo(context, DateOfBirth())),
+                  ],
+                ),
                 AppServices.addHeight(130.h),
                 FormFooterSectionView(dividerText: "Or Register with"),
                 AppServices.addHeight(70.h),

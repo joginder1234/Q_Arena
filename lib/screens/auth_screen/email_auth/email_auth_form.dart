@@ -32,10 +32,14 @@ class _EmailLoginViewState extends State<EmailLoginView> {
           AppServices.addHeight(12.h),
           AppTextField(hint: "Confirm Password", controller: _confirmPass),
           AppServices.addHeight(30.h),
-          ExpandedButtonView(
-            btnName: "Register",
-            onPress: () =>
-                AppServices.pushTo(context, OtpVerificationView(isEmail: true)),
+          Row(
+            children: [
+              ExpandedButtonView(
+                btnName: "Register",
+                onPress: () => AppServices.pushTo(
+                    context, OtpVerificationView(isEmail: true)),
+              ),
+            ],
           )
         ],
       ),

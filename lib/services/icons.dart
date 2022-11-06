@@ -24,6 +24,10 @@ class AppIcons {
   static const String userGroupIcon = "assets/icons/user_group.png";
   static const String chattingIcon = "assets/icons/chat_circle.png";
   static const String addIcon = "assets/icons/add.png";
+  static const String calenderIcon = "assets/icons/calenderIcon.png";
+  static const String infoIcon = "assets/icons/infoIcon.png";
+  static const String doneAllIcon = "assets/icons/DoneAll.png";
+  static const String locationIcon = "assets/icons/location.png";
 
   /* Sports Icons */
   static const String archeryIcon = "assets/sports/archery.png";

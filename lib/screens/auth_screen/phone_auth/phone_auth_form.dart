@@ -71,10 +71,14 @@ class _PhoneAuthViewState extends State<PhoneAuthView> {
             ],
           ),
           AppServices.addHeight(100.h),
-          ExpandedButtonView(
-            btnName: "Send Otp",
-            onPress: () => AppServices.pushTo(
-                context, OtpVerificationView(isEmail: false)),
+          Row(
+            children: [
+              ExpandedButtonView(
+                btnName: "Send Otp",
+                onPress: () => AppServices.pushTo(
+                    context, OtpVerificationView(isEmail: false)),
+              ),
+            ],
           )
         ],
       ),

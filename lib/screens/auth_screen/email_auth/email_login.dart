@@ -60,9 +60,14 @@ class _EmailLoginFormViewState extends State<EmailLoginFormView> {
                               fontWeight: FontWeight.w700))),
                 ),
                 AppServices.addHeight(30.h),
-                ExpandedButtonView(
-                    btnName: "Login",
-                    onPress: () => AppServices.pushTo(context, DateOfBirth())),
+                Row(
+                  children: [
+                    ExpandedButtonView(
+                        btnName: "Login",
+                        onPress: () =>
+                            AppServices.pushTo(context, DateOfBirth())),
+                  ],
+                ),
                 AppServices.addHeight(100.h),
                 FormFooterSectionView(dividerText: "Or Register with"),
                 AppServices.addHeight(50.h),

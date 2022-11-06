@@ -38,42 +38,59 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               AppServices.addHeight(40.h),
               Image.asset(AppImages.onBoardImage),
               AppServices.addHeight(10.h),
-              ExpandedButtonView(
-                btnName: "Sign Up",
-                onPress: () => AppServices.pushTo(context, AuthTabBarView()),
-                radius: 60,
-                txtColor: AppStyles.textColorBlack100,
-                bgColor: AppStyles.onBoardbtnColorPrimary,
+              Row(
+                children: [
+                  ExpandedButtonView(
+                    btnName: "Sign Up",
+                    onPress: () =>
+                        AppServices.pushTo(context, AuthTabBarView()),
+                    radius: 60,
+                    txtColor: AppStyles.textColorBlack100,
+                    bgColor: AppStyles.onBoardbtnColorPrimary,
+                  ),
+                ],
               ),
               AppServices.addHeight(10.h),
-              ExpandedButtonView(
-                btnName: "Sign In",
-                onPress: () => showModalBottomSheet(
-                    shape: RoundedRectangleBorder(
-                        borderRadius:
-                            BorderRadius.vertical(top: Radius.circular(20.r))),
-                    context: context,
-                    builder: (context) => Container(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 30.w, vertical: 30.h),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              ExpandedButtonView(
-                                  btnName: "Continue with Email",
-                                  bgColor: AppStyles.redHighLightColor,
-                                  onPress: () => AppServices.pushTo(
-                                      context, EmailLoginFormView())),
-                              AppServices.addHeight(10.h),
-                              ExpandedButtonView(
-                                  btnName: "Continue with Phone Number",
-                                  onPress: () => AppServices.pushTo(
-                                      context, EmailLoginFormView())),
-                            ],
-                          ),
-                        )),
-                radius: 60,
-                bgColor: AppStyles.onBoardbtnColorseconday,
+              Row(
+                children: [
+                  ExpandedButtonView(
+                    btnName: "Sign In",
+                    onPress: () => showModalBottomSheet(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(
+                                top: Radius.circular(20.r))),
+                        context: context,
+                        builder: (context) => Container(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 30.w, vertical: 30.h),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Row(
+                                    children: [
+                                      ExpandedButtonView(
+                                          btnName: "Continue with Email",
+                                          bgColor: AppStyles.redHighLightColor,
+                                          onPress: () => AppServices.pushTo(
+                                              context, EmailLoginFormView())),
+                                    ],
+                                  ),
+                                  AppServices.addHeight(10.h),
+                                  Row(
+                                    children: [
+                                      ExpandedButtonView(
+                                          btnName: "Continue with Phone Number",
+                                          onPress: () => AppServices.pushTo(
+                                              context, EmailLoginFormView())),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            )),
+                    radius: 60,
+                    bgColor: AppStyles.onBoardbtnColorseconday,
+                  ),
+                ],
               )
             ],
           ),
