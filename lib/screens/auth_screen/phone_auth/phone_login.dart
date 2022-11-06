@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:q_arena_user_application/configs/app_config.dart';
+import 'package:q_arena_user_application/screens/auth_screen/forgot_pass.dart';
 
-import '../../../app_config.dart';
 import '../../../components/app_textField.dart';
 import '../../../components/expanded_btn.dart';
 import '../../../components/password_textfield.dart';
@@ -52,7 +53,8 @@ class _PhoneLoginViewState extends State<PhoneLoginView> {
                 Align(
                   alignment: Alignment.centerRight,
                   child: TextButton(
-                      onPressed: () {},
+                      onPressed: () =>
+                          AppServices.pushTo(context, ForgotPasswordView()),
                       child: Text("Forgot Password?",
                           style: AppStyles.bodyMedium.copyWith(
                               color: AppStyles.textColorBlack50,
@@ -65,7 +67,7 @@ class _PhoneLoginViewState extends State<PhoneLoginView> {
                 AppServices.addHeight(130.h),
                 FormFooterSectionView(dividerText: "Or Register with"),
                 AppServices.addHeight(70.h),
-                footerTextBtn("Don't have an account?", "Register Now")
+                footerTextBtn("Don't have an account?", "Register Now", () {})
               ],
             ),
           ),

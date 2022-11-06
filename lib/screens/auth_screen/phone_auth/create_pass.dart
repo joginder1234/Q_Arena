@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:q_arena_user_application/components/expanded_btn.dart';
 import 'package:q_arena_user_application/components/password_textfield.dart';
 import 'package:q_arena_user_application/screens/auth_screen/auth_completion.dart';
+import 'package:q_arena_user_application/screens/auth_screen/auth_tabbar.dart';
 import 'package:q_arena_user_application/screens/auth_screen/form_footer_section.dart';
 import 'package:q_arena_user_application/services/app_services.dart';
 
@@ -61,7 +62,8 @@ class _CreatePhonePassViewState extends State<CreatePhonePassView> {
             AppServices.addHeight(35.h),
             FormFooterSectionView(dividerText: "Or Login with"),
             AppServices.addHeight(116.h),
-            footerTextBtn("Don't have an account?", "Register Now")
+            footerTextBtn("Don't have an account?", "Register Now",
+                () => AppServices.pushTo(context, AuthTabBarView()))
           ],
         ),
       )),

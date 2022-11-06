@@ -3,8 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:q_arena_user_application/components/custome_tab_switch.dart';
 import 'package:q_arena_user_application/components/session_divider.dart';
 import 'package:q_arena_user_application/components/social_icon_button.dart';
+import 'package:q_arena_user_application/screens/auth_screen/email_auth/email_login.dart';
 import 'package:q_arena_user_application/screens/auth_screen/form_footer_section.dart';
 import 'package:q_arena_user_application/screens/auth_screen/phone_auth/phone_auth_form.dart';
+import 'package:q_arena_user_application/screens/auth_screen/phone_auth/phone_login.dart';
 import 'package:q_arena_user_application/services/icons.dart';
 
 import '../../services/app_services.dart';
@@ -32,7 +34,7 @@ class _AuthTabBarViewState extends State<AuthTabBarView> {
           padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: Column(
             children: [
-              AppServices.addHeight(90.h),
+              AppServices.addHeight(50.h),
               Center(
                 child: Text("Sign in to continue",
                     textScaleFactor: 1.0, style: AppStyles.bodyLarge),
@@ -65,7 +67,12 @@ class _AuthTabBarViewState extends State<AuthTabBarView> {
               AppServices.addHeight(35.h),
               FormFooterSectionView(dividerText: "Or Register with"),
               AppServices.addHeight(54.h),
-              footerTextBtn("Already have an account?", "Login Now")
+              footerTextBtn(
+                  "Already have an account?",
+                  "Login Now",
+                  () => activeTabIndex == 0
+                      ? AppServices.pushTo(context, EmailLoginFormView())
+                      : AppServices.pushTo(context, PhoneLoginView()))
             ],
           ),
         ),
