@@ -15,6 +15,11 @@ class AppServices {
   static pushTo(BuildContext context, Widget screen) =>
       Navigator.of(context).push(MaterialPageRoute(builder: (_) => screen));
 
-  static double scaleFactor(BuildContext context) =>
-      AppConfig.designWidth / getScreenWidth(context);
+  static double scaleFactorText(BuildContext context) {
+    if (getScreenWidth(context) > AppConfig.designWidth) {
+      return AppConfig.designWidth / getScreenWidth(context);
+    } else {
+      return getScreenWidth(context) / AppConfig.designWidth;
+    }
+  }
 }

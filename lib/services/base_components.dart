@@ -39,7 +39,7 @@ stepCreator(int currentStep, BuildContext context) => Align(
             color: AppStyles.redHighLightColor.withOpacity(0.1)),
         child: Center(
           child: Text.rich(
-              textScaleFactor: AppServices.scaleFactor(context),
+              textScaleFactor: AppServices.scaleFactorText(context),
               TextSpan(
                   text: "$currentStep",
                   style: AppStyles.largeHeader,
