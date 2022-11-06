@@ -39,8 +39,12 @@ class _AuthCompletionDialogState extends State<AuthCompletionDialog> {
                   style: AppStyles.bodyMedium.copyWith(
                       color: AppStyles.textColorBlack50, height: 1.5)),
               AppServices.addHeight(17.h),
-              ExpandedButtonView(
-                  btnName: "Back to Login", onPress: () => getRoute())
+              Row(
+                children: [
+                  ExpandedButtonView(
+                      btnName: "Back to Login", onPress: () => getRoute()),
+                ],
+              )
             ],
           ),
         ),

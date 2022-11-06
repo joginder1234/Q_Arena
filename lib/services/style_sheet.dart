@@ -16,6 +16,8 @@ class AppStyles {
   static const Color whiteColor = Color(0xffffffff);
   static const Color onBoardbtnColorPrimary = Color(0xff9AE4CC);
   static const Color onBoardbtnColorseconday = Color(0xff975296);
+  static const Color purpleColor = Color.fromARGB(255, 79, 53, 155);
+  static const Color greenColor = Color.fromARGB(255, 52, 168, 83);
 
   /* Application Text Styles*/
 

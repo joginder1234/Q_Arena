@@ -26,7 +26,7 @@ class FlexibleButton extends StatelessWidget {
                 EdgeInsets.symmetric(horizontal: 60.w, vertical: 20.h)),
             backgroundColor: MaterialStateProperty.all(backGroundColor)),
         child: Text(
-          "Next",
+          btnName,
           style: AppStyles.bodyMedium.copyWith(color: textColor),
         ));
   }

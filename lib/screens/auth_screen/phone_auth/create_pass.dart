@@ -31,40 +31,46 @@ class _CreatePhonePassViewState extends State<CreatePhonePassView> {
         elevation: 0,
       ),
       body: SafeArea(
-          child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 15.w),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            AppServices.addHeight(80.h),
-            Text("Create a Password", style: AppStyles.largeHeader),
-            AppServices.addHeight(80.h),
-            PasswordTextFieldView(
-              hint: "Enter your password",
-              isObsecure: _textObsecure,
-              onSuffixPressed: () =>
-                  setState(() => _textObsecure = !_textObsecure),
-            ),
-            AppServices.addHeight(70.h),
-            Align(
-              alignment: Alignment.centerRight,
-              child: TextButton(
-                  onPressed: () {},
-                  child: Text("Forgot Password?",
-                      style: AppStyles.bodyMedium
-                          .copyWith(color: AppStyles.textColorBlack100))),
-            ),
-            AppServices.addHeight(30.h),
-            ExpandedButtonView(
-                btnName: "Set Phone Password",
-                onPress: () => AppServices.pushTo(
-                    context, AuthCompletionDialog(isEmail: false))),
-            AppServices.addHeight(35.h),
-            FormFooterSectionView(dividerText: "Or Login with"),
-            AppServices.addHeight(116.h),
-            footerTextBtn("Don't have an account?", "Register Now",
-                () => AppServices.pushTo(context, AuthTabBarView()))
-          ],
+          child: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 15.w),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              AppServices.addHeight(80.h),
+              Text("Create a Password", style: AppStyles.largeHeader),
+              AppServices.addHeight(80.h),
+              PasswordTextFieldView(
+                hint: "Enter your password",
+                isObsecure: _textObsecure,
+                onSuffixPressed: () =>
+                    setState(() => _textObsecure = !_textObsecure),
+              ),
+              AppServices.addHeight(70.h),
+              Align(
+                alignment: Alignment.centerRight,
+                child: TextButton(
+                    onPressed: () {},
+                    child: Text("Forgot Password?",
+                        style: AppStyles.bodyMedium
+                            .copyWith(color: AppStyles.textColorBlack100))),
+              ),
+              AppServices.addHeight(30.h),
+              Row(
+                children: [
+                  ExpandedButtonView(
+                      btnName: "Set Phone Password",
+                      onPress: () => AppServices.pushTo(
+                          context, AuthCompletionDialog(isEmail: false))),
+                ],
+              ),
+              AppServices.addHeight(35.h),
+              FormFooterSectionView(dividerText: "Or Login with"),
+              AppServices.addHeight(70.h),
+              footerTextBtn("Don't have an account?", "Register Now",
+                  () => AppServices.pushTo(context, AuthTabBarView()))
+            ],
+          ),
         ),
       )),
     );

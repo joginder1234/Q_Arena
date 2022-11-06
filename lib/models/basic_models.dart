@@ -14,3 +14,16 @@ class FacilityClass {
   String icon, facility;
   FacilityClass(this.icon, this.facility);
 }
+
+class TimingsClass {
+  String time;
+  bool isAvailable, isSelected;
+  TimingsClass(this.time, this.isAvailable, this.isSelected);
+}
+
+class MessageClass {
+  String name, message, time, image;
+  bool isOnline, isSeen;
+  MessageClass(this.name, this.message, this.time, this.image, this.isOnline,
+      this.isSeen);
+}

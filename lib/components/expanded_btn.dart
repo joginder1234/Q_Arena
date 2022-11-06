@@ -21,21 +21,24 @@ class ExpandedButtonView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: AppServices.getScreenWidth(context),
-      child: TextButton(
-          style: ButtonStyle(
-              shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(radius.r))),
-              padding: MaterialStateProperty.all(
-                  EdgeInsets.symmetric(vertical: 19.h)),
-              backgroundColor: MaterialStateProperty.all(bgColor)),
-          onPressed: () => onPress(),
-          child: Text(
-            btnName,
-            style: AppStyles.bodyMedium
-                .copyWith(color: txtColor, fontWeight: FontWeight.w700),
-          )),
-    );
+    return Builder(builder: (context) {
+      return Expanded(
+        child: SizedBox(
+          child: TextButton(
+              style: ButtonStyle(
+                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(radius.r))),
+                  padding: MaterialStateProperty.all(
+                      EdgeInsets.symmetric(vertical: 19.h)),
+                  backgroundColor: MaterialStateProperty.all(bgColor)),
+              onPressed: () => onPress(),
+              child: Text(
+                btnName,
+                style: AppStyles.bodyMedium
+                    .copyWith(color: txtColor, fontWeight: FontWeight.w700),
+              )),
+        ),
+      );
+    });
   }
 }

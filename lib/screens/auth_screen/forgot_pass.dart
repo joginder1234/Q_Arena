@@ -45,7 +45,11 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
               hint: "Enter your email",
             ),
             AppServices.addHeight(110.h),
-            ExpandedButtonView(btnName: "Send Code", onPress: () {})
+            Row(
+              children: [
+                ExpandedButtonView(btnName: "Send Code", onPress: () {}),
+              ],
+            )
           ],
         ),
       )),
