@@ -16,6 +16,8 @@ class AppStyles {
   static const Color whiteColor = Color(0xffffffff);
   static const Color onBoardbtnColorPrimary = Color(0xff9AE4CC);
   static const Color onBoardbtnColorseconday = Color(0xff975296);
+  static const Color bluePrimary = Color(0xff4F359B);
+  static const Color neonColor = Color(0xff6AFCD1);
 
   /* Application Text Styles*/
 

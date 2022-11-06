@@ -21,6 +21,9 @@ class AppIcons {
   static const String showerIcon = "assets/icons/shower.png";
   static const String trainIcon = "assets/icons/train.png";
   static const String wheelChairIcon = "assets/icons/wheenChair.png";
+  static const String userGroupIcon = "assets/icons/user_group.png";
+  static const String chattingIcon = "assets/icons/chat_circle.png";
+  static const String addIcon = "assets/icons/add.png";
 
   /* Sports Icons */
   static const String archeryIcon = "assets/sports/archery.png";

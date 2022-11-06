@@ -5,6 +5,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:q_arena_user_application/screens/NearbyCourts/nearby_courts.dart';
 import 'package:q_arena_user_application/screens/NearbyCourts/vanue_details.dart';
+import 'package:q_arena_user_application/screens/tournament/create_tournament.dart';
 import 'package:q_arena_user_application/services/app_services.dart';
 import 'package:q_arena_user_application/services/icons.dart';
 import 'package:q_arena_user_application/services/images.dart';
@@ -90,9 +91,13 @@ class _DashboardViewState extends State<DashboardView> {
                   CarouselSlider(
                     items: List.generate(
                         4,
-                        (index) => Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 3.w),
-                              child: Image.asset(AppImages.publicBanner),
+                        (index) => GestureDetector(
+                              onTap: () => AppServices.pushTo(
+                                  context, CreateTournamentView()),
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 3.w),
+                                child: Image.asset(AppImages.publicBanner),
+                              ),
                             )),
                     options: CarouselOptions(
                       autoPlay: false,

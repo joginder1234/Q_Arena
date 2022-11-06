@@ -8,6 +8,7 @@ class AppImages {
   static const String female_gender_sign = "assets/images/femaleGendersign.png";
   static const String disability_frame = "assets/images/disabilityFrame.png";
   static const String profileImage = "assets/user_profile.png";
+  static const String inviteMarkers = "assets/invite_marker.png";
 
   /* Banner Images */
   static const String trendingBanner = "assets/banner_tranding.png";
@@ -15,4 +16,5 @@ class AppImages {
   static const String playMateBanner = "assets/playmate.png";
   static const String vanueBg = "assets/vanue.png";
   static const String onBoardImage = "assets/onBoard.png";
+  static const String groundImage = "assets/ground.png";
 }

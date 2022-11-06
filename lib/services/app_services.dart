@@ -4,9 +4,9 @@ import '../configs/app_config.dart';
 
 class AppServices {
   /* Height and Width Factors */
-  static getScreenWidth(BuildContext context) =>
+  static double getScreenWidth(BuildContext context) =>
       MediaQuery.of(context).size.width;
-  static getScreenHeight(BuildContext context) =>
+  static double getScreenHeight(BuildContext context) =>
       MediaQuery.of(context).size.height;
   static addHeight(double space) => SizedBox(height: space);
   static addWidth(double space) => SizedBox(width: space);
