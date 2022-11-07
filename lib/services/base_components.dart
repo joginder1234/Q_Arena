@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_share/flutter_share.dart';
 import 'package:q_arena_user_application/models/basic_models.dart';
 import 'package:q_arena_user_application/services/app_services.dart';
 import 'package:q_arena_user_application/services/icons.dart';
@@ -59,3 +60,11 @@ List<FacilityClass> facilities = [
   FacilityClass(AppIcons.coffeeIcon, "Cafe"),
   FacilityClass(AppIcons.trainIcon, "5 min from Metro")
 ];
+
+Future<void> share(String title, String link) async {
+  await FlutterShare.share(
+      title: title,
+      text: 'Example share text',
+      linkUrl: link,
+      chooserTitle: 'Example Chooser Title');
+}

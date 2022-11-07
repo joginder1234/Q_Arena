@@ -11,11 +11,13 @@ class ExpandedButtonView extends StatelessWidget {
   Color bgColor, txtColor;
   Function onPress;
   double radius;
+  double padding;
   ExpandedButtonView(
       {super.key,
       required this.btnName,
       required this.onPress,
       this.radius = 8,
+      this.padding = 19,
       this.bgColor = AppStyles.btnColorSecondary,
       this.txtColor = AppStyles.whiteColor});
 
@@ -29,7 +31,7 @@ class ExpandedButtonView extends StatelessWidget {
                   shape: MaterialStateProperty.all(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(radius.r))),
                   padding: MaterialStateProperty.all(
-                      EdgeInsets.symmetric(vertical: 19.h)),
+                      EdgeInsets.symmetric(vertical: padding.h)),
                   backgroundColor: MaterialStateProperty.all(bgColor)),
               onPressed: () => onPress(),
               child: Text(

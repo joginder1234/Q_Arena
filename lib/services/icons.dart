@@ -28,6 +28,10 @@ class AppIcons {
   static const String infoIcon = "assets/icons/infoIcon.png";
   static const String doneAllIcon = "assets/icons/DoneAll.png";
   static const String locationIcon = "assets/icons/location.png";
+  static const String backbtnIcon = "assets/icons/back_arrow.png";
+  static const String crownIcon = "assets/icons/crown.png";
+  static const String manWalkIcon = "assets/icons/man_walk.png";
+  static const String trophyIcon = "assets/icons/trophy.png";
 
   /* Sports Icons */
   static const String archeryIcon = "assets/sports/archery.png";

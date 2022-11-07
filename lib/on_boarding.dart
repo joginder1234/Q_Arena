@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:q_arena_user_application/components/expanded_btn.dart';
 import 'package:q_arena_user_application/screens/auth_screen/auth_tabbar.dart';
 import 'package:q_arena_user_application/screens/auth_screen/email_auth/email_login.dart';
+import 'package:q_arena_user_application/screens/auth_screen/phone_auth/phone_login.dart';
 import 'package:q_arena_user_application/services/app_services.dart';
 import 'package:q_arena_user_application/services/images.dart';
 import 'package:q_arena_user_application/services/style_sheet.dart';
@@ -81,7 +82,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                                       ExpandedButtonView(
                                           btnName: "Continue with Phone Number",
                                           onPress: () => AppServices.pushTo(
-                                              context, EmailLoginFormView())),
+                                              context, PhoneLoginView())),
                                     ],
                                   ),
                                 ],

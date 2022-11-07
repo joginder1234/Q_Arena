@@ -23,7 +23,9 @@ class _VanueDetailsViewState extends State<VanueDetailsView> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         actions: [
-          IconButton(onPressed: () {}, icon: Image.asset(AppIcons.shareIcon)),
+          IconButton(
+              onPressed: () => share("Q_Arena Title", "https://google.com"),
+              icon: Image.asset(AppIcons.shareIcon)),
           IconButton(onPressed: () {}, icon: Image.asset(AppIcons.fvrtIcon)),
         ],
       ),
@@ -101,6 +103,13 @@ class _VanueDetailsViewState extends State<VanueDetailsView> {
                   child: TextButton(
                       onPressed: () {
                         showModalBottomSheet(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.vertical(
+                                    top: Radius.circular(20.r))),
+                            constraints: BoxConstraints(
+                                maxHeight:
+                                    AppServices.getScreenHeight(context) *
+                                        0.8.h),
                             isScrollControlled: true,
                             context: context,
                             builder: (BuildContext context) {

@@ -14,6 +14,7 @@ class AppServices {
   /* Navigation and routing */
   static pushTo(BuildContext context, Widget screen) =>
       Navigator.of(context).push(MaterialPageRoute(builder: (_) => screen));
+  static popView(BuildContext context) => Navigator.of(context).pop();
 
   static double scaleFactorText(BuildContext context) {
     if (getScreenWidth(context) > AppConfig.designWidth) {

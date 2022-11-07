@@ -6,6 +6,7 @@ import 'package:q_arena_user_application/components/flexible_button.dart';
 import 'package:q_arena_user_application/configs/app_config.dart';
 import 'package:q_arena_user_application/screens/tournament/invite_team_sceeen.dart';
 import 'package:q_arena_user_application/services/app_services.dart';
+import 'package:q_arena_user_application/services/base_components.dart';
 import 'package:q_arena_user_application/services/icons.dart';
 import 'package:q_arena_user_application/services/images.dart';
 import 'package:q_arena_user_application/services/style_sheet.dart';
@@ -27,7 +28,9 @@ class _CreateTournamentViewState extends State<CreateTournamentView> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         actions: [
-          IconButton(onPressed: () {}, icon: Image.asset(AppIcons.shareIcon))
+          IconButton(
+              onPressed: () => share("Q_Arena League", "https://Google.com"),
+              icon: Image.asset(AppIcons.shareIcon))
         ],
       ),
       body: Container(

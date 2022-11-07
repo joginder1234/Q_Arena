@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:q_arena_user_application/screens/tournament/invitation_view.dart';
 import 'package:q_arena_user_application/services/app_services.dart';
 import 'package:q_arena_user_application/services/icons.dart';
 import 'package:q_arena_user_application/services/images.dart';
@@ -59,9 +60,13 @@ class _InviteTeamMatesViewState extends State<InviteTeamMatesView> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: List.generate(
                           2,
-                          (index) => Image.asset(
-                                AppIcons.addIcon,
-                                height: 45.h,
+                          (index) => InkWell(
+                                onTap: () => AppServices.pushTo(
+                                    context, TeamInvitationView()),
+                                child: Image.asset(
+                                  AppIcons.addIcon,
+                                  height: 45.h,
+                                ),
                               )),
                     ),
                     AppServices.addHeight(50.h),
@@ -72,9 +77,13 @@ class _InviteTeamMatesViewState extends State<InviteTeamMatesView> {
                           (i) => Container(
                                 transform: Matrix4.translationValues(
                                     0, i == 1 ? -20 : 0, 0),
-                                child: Image.asset(
-                                  AppIcons.addIcon,
-                                  height: 45.h,
+                                child: InkWell(
+                                  onTap: () => AppServices.pushTo(
+                                      context, TeamInvitationView()),
+                                  child: Image.asset(
+                                    AppIcons.addIcon,
+                                    height: 45.h,
+                                  ),
                                 ),
                               )),
                     ),
@@ -83,9 +92,13 @@ class _InviteTeamMatesViewState extends State<InviteTeamMatesView> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: List.generate(
                           2,
-                          (index) => Image.asset(
-                                AppIcons.addIcon,
-                                height: 45.h,
+                          (index) => InkWell(
+                                onTap: () => AppServices.pushTo(
+                                    context, TeamInvitationView()),
+                                child: Image.asset(
+                                  AppIcons.addIcon,
+                                  height: 45.h,
+                                ),
                               )),
                     ),
                     AppServices.addHeight(30.h),
@@ -96,9 +109,13 @@ class _InviteTeamMatesViewState extends State<InviteTeamMatesView> {
                           (i) => Container(
                                 transform: Matrix4.translationValues(
                                     0, i == 1 ? -20 : 0, 0),
-                                child: Image.asset(
-                                  AppIcons.addIcon,
-                                  height: 45.h,
+                                child: InkWell(
+                                  onTap: () => AppServices.pushTo(
+                                      context, TeamInvitationView()),
+                                  child: Image.asset(
+                                    AppIcons.addIcon,
+                                    height: 45.h,
+                                  ),
                                 ),
                               )),
                     ),
@@ -107,9 +124,13 @@ class _InviteTeamMatesViewState extends State<InviteTeamMatesView> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: List.generate(
                           2,
-                          (index) => Image.asset(
-                                AppIcons.addIcon,
-                                height: 45.h,
+                          (index) => InkWell(
+                                onTap: () => AppServices.pushTo(
+                                    context, TeamInvitationView()),
+                                child: Image.asset(
+                                  AppIcons.addIcon,
+                                  height: 45.h,
+                                ),
                               )),
                     ),
                     AppServices.addHeight(50.h),
@@ -120,9 +141,13 @@ class _InviteTeamMatesViewState extends State<InviteTeamMatesView> {
                           (i) => Container(
                                 transform: Matrix4.translationValues(
                                     0, i == 1 ? -20 : 0, 0),
-                                child: Image.asset(
-                                  AppIcons.addIcon,
-                                  height: 45.h,
+                                child: InkWell(
+                                  onTap: () => AppServices.pushTo(
+                                      context, TeamInvitationView()),
+                                  child: Image.asset(
+                                    AppIcons.addIcon,
+                                    height: 45.h,
+                                  ),
                                 ),
                               )),
                     ),

@@ -9,6 +9,7 @@ class AppImages {
   static const String disability_frame = "assets/images/disabilityFrame.png";
   static const String profileImage = "assets/user_profile.png";
   static const String inviteMarkers = "assets/invite_marker.png";
+  static const String memberPassImage = "assets/pass.png";
 
   /* Banner Images */
   static const String trendingBanner = "assets/banner_tranding.png";

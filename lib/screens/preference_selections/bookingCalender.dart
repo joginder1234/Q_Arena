@@ -99,39 +99,40 @@ class _BookingCalenderViewState extends State<BookingCalenderView> {
               ),
             ),
           ),
-          SizedBox(
-            height: AppServices.getScreenHeight(context) * 0.62.h,
-            child: SingleChildScrollView(
-              scrollDirection: Axis.vertical,
-              child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 14.h),
-                child: Column(
-                  children: List.generate(
-                      timings.length,
-                      (index) => Card(
-                            child: ListTile(
-                              title: Text(
-                                timings[index].time,
-                                style: AppStyles.heading2
-                                    .copyWith(fontWeight: FontWeight.w900),
+          Expanded(
+            child: SizedBox(
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: 14.h),
+                  child: Column(
+                    children: List.generate(
+                        timings.length,
+                        (index) => Card(
+                              child: ListTile(
+                                title: Text(
+                                  timings[index].time,
+                                  style: AppStyles.heading2
+                                      .copyWith(fontWeight: FontWeight.w900),
+                                ),
+                                subtitle: timings[index].isAvailable == true
+                                    ? Text(
+                                        "Available",
+                                        style: AppStyles.bodyLarge.copyWith(
+                                            fontWeight: FontWeight.w500),
+                                      )
+                                    : Text("Not Available",
+                                        style: AppStyles.bodyLarge.copyWith(
+                                            fontWeight: FontWeight.w500)),
+                                trailing: timings[index].isSelected == true
+                                    ? Text("Selected",
+                                        style: AppStyles.bodyLarge.copyWith(
+                                            fontWeight: FontWeight.w600,
+                                            color: AppStyles.purpleColor))
+                                    : null,
                               ),
-                              subtitle: timings[index].isAvailable == true
-                                  ? Text(
-                                      "Available",
-                                      style: AppStyles.bodyLarge.copyWith(
-                                          fontWeight: FontWeight.w500),
-                                    )
-                                  : Text("Not Available",
-                                      style: AppStyles.bodyLarge.copyWith(
-                                          fontWeight: FontWeight.w500)),
-                              trailing: timings[index].isSelected == true
-                                  ? Text("Selected",
-                                      style: AppStyles.bodyLarge.copyWith(
-                                          fontWeight: FontWeight.w600,
-                                          color: AppStyles.purpleColor))
-                                  : null,
-                            ),
-                          )),
+                            )),
+                  ),
                 ),
               ),
             ),

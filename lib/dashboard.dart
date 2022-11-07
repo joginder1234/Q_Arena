@@ -5,6 +5,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:q_arena_user_application/screens/NearbyCourts/nearby_courts.dart';
 import 'package:q_arena_user_application/screens/NearbyCourts/vanue_details.dart';
+import 'package:q_arena_user_application/screens/profile_activity/profile_main.dart';
 import 'package:q_arena_user_application/screens/tournament/create_tournament.dart';
 import 'package:q_arena_user_application/services/app_services.dart';
 import 'package:q_arena_user_application/services/icons.dart';
@@ -220,12 +221,16 @@ class Dashboard_Appbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Container(
-        height: 40,
-        width: 40,
-        decoration: const BoxDecoration(
-            shape: BoxShape.circle,
-            image: DecorationImage(image: AssetImage(AppImages.profileImage))),
+      leading: GestureDetector(
+        onTap: () => AppServices.pushTo(context, MainProfileView()),
+        child: Container(
+          height: 40,
+          width: 40,
+          decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              image:
+                  DecorationImage(image: AssetImage(AppImages.profileImage))),
+        ),
       ),
       title: Text("Current Location",
           style:

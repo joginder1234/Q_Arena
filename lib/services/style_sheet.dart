@@ -20,6 +20,8 @@ class AppStyles {
   static const Color greenColor = Color.fromARGB(255, 52, 168, 83);
   static const Color bluePrimary = Color(0xff4F359B);
   static const Color neonColor = Color(0xff6AFCD1);
+  static const Color passColorPrimary = Color(0xffBA142B);
+  static const Color passColorSecondary = Color(0xff5065A1);
 
   /* Application Text Styles*/
 
