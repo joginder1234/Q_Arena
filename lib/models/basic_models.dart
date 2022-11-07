@@ -33,3 +33,8 @@ class CreditCardClass {
   CreditCardClass(
       this.cardNumber, this.cardHolderName, this.expDate, this.cardType);
 }
+
+class ExperienceClass {
+  String text, image;
+  ExperienceClass(this.text, this.image);
+}

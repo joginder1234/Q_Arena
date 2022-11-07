@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:q_arena_user_application/bottom_nav_bar.dart';
 import 'package:q_arena_user_application/components/expanded_btn.dart';
+import 'package:q_arena_user_application/screens/preference_selections/experience_rating.dart';
 import 'package:q_arena_user_application/services/app_services.dart';
 import 'package:q_arena_user_application/services/images.dart';
 import 'package:q_arena_user_application/services/style_sheet.dart';
@@ -35,7 +36,8 @@ class PlayPassView extends StatelessWidget {
                   ExpandedButtonView(
                       btnName: "★★ Rate Us ★★",
                       bgColor: AppStyles.redHighLightColor,
-                      onPress: () {})
+                      onPress: () =>
+                          AppServices.pushTo(context, ExperienceRatingView()))
                 ],
               ),
               TextButton(
