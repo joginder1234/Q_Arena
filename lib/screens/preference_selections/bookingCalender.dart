@@ -4,6 +4,8 @@ import 'package:horizontal_calendar/horizontal_calendar.dart';
 import 'package:q_arena_user_application/components/expanded_btn.dart';
 import 'package:q_arena_user_application/models/basic_models.dart';
 import 'package:q_arena_user_application/screens/LookUp_Playmate/messages.dart';
+import 'package:q_arena_user_application/screens/Trainer_Section/trainer_details.dart';
+import 'package:q_arena_user_application/screens/payment/payment_desc.dart';
 import 'package:q_arena_user_application/screens/tournament/invite_team_sceeen.dart';
 import 'package:q_arena_user_application/services/app_services.dart';
 import 'package:q_arena_user_application/services/icons.dart';
@@ -28,9 +30,15 @@ class _BookingCalenderViewState extends State<BookingCalenderView> {
 
   getnavigation() {
     if (widget.type == "court") {
-      return AppServices.pushTo(context, InviteTeamMatesView());
+      return {
+        Navigator.pop(context),
+        AppServices.pushTo(context, InviteTeamMatesView())
+      };
     } else {
-      return AppServices.pushTo(context, InviteTeamMatesView());
+      return {
+        Navigator.pop(context),
+        AppServices.pushTo(context, PaymentDescriptionView())
+      };
     }
   }
 
@@ -148,7 +156,8 @@ class _BookingCalenderViewState extends State<BookingCalenderView> {
                                                                 "court"
                                                             ? "Invite Team Mates"
                                                             : "Pay Now",
-                                                        onPress: () {}),
+                                                        onPress: () =>
+                                                            getnavigation()),
                                                   ],
                                                 ),
                                                 AppServices.addHeight(15.h),
@@ -156,7 +165,10 @@ class _BookingCalenderViewState extends State<BookingCalenderView> {
                                                   children: [
                                                     ExpandedButtonView(
                                                         btnName: "Cancel",
-                                                        onPress: () {}),
+                                                        onPress: () {
+                                                          Navigator.pop(
+                                                              context);
+                                                        }),
                                                   ],
                                                 ),
                                               ],

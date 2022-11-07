@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:q_arena_user_application/components/circular_badge.dart';
 import 'package:q_arena_user_application/services/app_services.dart';
 import 'package:q_arena_user_application/services/icons.dart';
 import 'package:q_arena_user_application/services/images.dart';
@@ -55,12 +56,10 @@ class _MyActivityViewState extends State<MyActivityView> {
                       children: [
                         Stack(
                           children: [
-                            decoration_circle(
-                                context: context,
+                            CircularBadgeView(
                                 transformValue: 15,
                                 bgColor: AppStyles.textColorBlack50),
-                            decoration_circle(
-                                context: context, isIcon: false, child: "10")
+                            CircularBadgeView(isIcon: false, child: "10")
                           ],
                         ),
                         Text("BOOKED COURTS",
@@ -85,10 +84,8 @@ class _MyActivityViewState extends State<MyActivityView> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        decoration_circle(
-                            context: context,
-                            child: AppIcons.manWalkIcon,
-                            isIcon: true),
+                        CircularBadgeView(
+                            child: AppIcons.manWalkIcon, isIcon: true),
                         Text("500 STEPS",
                             textScaleFactor:
                                 AppServices.scaleFactorText(context),
@@ -121,13 +118,11 @@ class _MyActivityViewState extends State<MyActivityView> {
                             style: AppStyles.heading2),
                         Stack(
                           children: [
-                            decoration_circle(
+                            CircularBadgeView(
                                 showBorder: true,
-                                context: context,
                                 bgColor: AppStyles.whiteColor),
-                            decoration_circle(
+                            CircularBadgeView(
                                 showBorder: true,
-                                context: context,
                                 bgColor: AppStyles.whiteColor,
                                 child: "+2",
                                 transformValue: 25),
@@ -156,28 +151,24 @@ class _MyActivityViewState extends State<MyActivityView> {
                             style: AppStyles.heading2),
                         Stack(
                           children: [
-                            decoration_circle(
-                                context: context,
+                            CircularBadgeView(
                                 bgColor: AppStyles.whiteColor,
                                 expandImage: true,
                                 child: AppImages.profileImage,
                                 isIcon: true),
-                            decoration_circle(
+                            CircularBadgeView(
                                 transformValue: 25.w,
-                                context: context,
                                 bgColor: AppStyles.whiteColor,
                                 expandImage: true,
                                 child: AppImages.profileImage,
                                 isIcon: true),
-                            decoration_circle(
+                            CircularBadgeView(
                                 transformValue: 110.w,
-                                context: context,
                                 bgColor: AppStyles.whiteColor,
                                 expandImage: true,
                                 child: "+5"),
-                            decoration_circle(
+                            CircularBadgeView(
                                 transformValue: 70.w,
-                                context: context,
                                 bgColor: AppStyles.whiteColor,
                                 expandImage: true,
                                 child: AppImages.profileImage,
@@ -222,45 +213,6 @@ class _MyActivityViewState extends State<MyActivityView> {
             ],
           )
         ],
-      ),
-    );
-  }
-
-  AnimatedScale decoration_circle(
-      {required BuildContext context,
-      String child = '',
-      bool isIcon = false,
-      double transformValue = 0,
-      bool showBorder = false,
-      bool expandImage = false,
-      Color bgColor = AppStyles.redHighLightColor}) {
-    return AnimatedScale(
-      scale: AppServices.scaleFactorText(context),
-      duration: Duration(milliseconds: 200),
-      child: Container(
-        transform: Matrix4.translationValues(transformValue, 0, 0),
-        alignment: Alignment.center,
-        width: 60.w,
-        height: 60.w,
-        decoration: BoxDecoration(
-            color: bgColor,
-            shape: BoxShape.circle,
-            border: showBorder
-                ? Border.all(color: AppStyles.textColorBlack50, width: 2)
-                : null),
-        child: isIcon
-            ? expandImage
-                ? Image.asset(
-                    child,
-                    fit: BoxFit.cover,
-                    scale: AppServices.scaleFactorText(context),
-                  )
-                : Image.asset(
-                    child,
-                    scale: AppServices.scaleFactorText(context),
-                    height: 35.h,
-                  )
-            : Text(child, style: AppStyles.heading1),
       ),
     );
   }

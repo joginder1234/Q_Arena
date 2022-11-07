@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:q_arena_user_application/screens/NearbyCourts/vanue_details.dart';
+import 'package:q_arena_user_application/screens/Trainer_Section/trainer_details.dart';
 import 'package:q_arena_user_application/screens/preference_selections/bookingCalender.dart';
 import 'package:q_arena_user_application/services/app_services.dart';
 import 'package:q_arena_user_application/services/style_sheet.dart';
@@ -21,13 +22,7 @@ class _ListViewScreenState extends State<ListViewScreen> {
     if (widget.type == "court") {
       return AppServices.pushTo(context, VanueDetailsView());
     } else {
-      return showModalBottomSheet(
-          isScrollControlled: true,
-          constraints: BoxConstraints(
-              maxHeight: AppServices.getScreenHeight(context) * 0.7),
-          context: context,
-          builder: (BuildContext context) =>
-              BookingCalenderView(type: widget.type));
+      return AppServices.pushTo(context, TrainerDetails(type: widget.type));
     }
   }
 

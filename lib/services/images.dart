@@ -17,6 +17,7 @@ class AppImages {
   static const String amazingEmoji = "assets/images/amazingEmoji.png";
   static const String sadEmoji = "assets/images/sadEmoji.png";
   static const String playerImage = "assets/images/playerImage.png";
+  static const String trainerBgImage = "assets/images/TrainerBg.png";
 
   /* Banner Images */
   static const String trendingBanner = "assets/banner_tranding.png";

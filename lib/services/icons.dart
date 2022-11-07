@@ -32,6 +32,7 @@ class AppIcons {
   static const String crownIcon = "assets/icons/crown.png";
   static const String manWalkIcon = "assets/icons/man_walk.png";
   static const String trophyIcon = "assets/icons/trophy.png";
+  static const String commentIcon = "assets/icons/comment.png";
 
   /* Sports Icons */
   static const String archeryIcon = "assets/sports/archery.png";
