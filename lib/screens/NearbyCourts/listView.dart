@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:q_arena_user_application/screens/NearbyCourts/vanue_details.dart';
+import 'package:q_arena_user_application/screens/preference_selections/bookingCalender.dart';
 import 'package:q_arena_user_application/services/app_services.dart';
 import 'package:q_arena_user_application/services/style_sheet.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -8,13 +9,28 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import '../../services/images.dart';
 
 class ListViewScreen extends StatefulWidget {
-  const ListViewScreen({super.key});
+  String type;
+  ListViewScreen({super.key, required this.type});
 
   @override
   State<ListViewScreen> createState() => _ListViewScreenState();
 }
 
 class _ListViewScreenState extends State<ListViewScreen> {
+  getRoute() {
+    if (widget.type == "court") {
+      return AppServices.pushTo(context, VanueDetailsView());
+    } else {
+      return showModalBottomSheet(
+          isScrollControlled: true,
+          constraints: BoxConstraints(
+              maxHeight: AppServices.getScreenHeight(context) * 0.7),
+          context: context,
+          builder: (BuildContext context) =>
+              BookingCalenderView(type: widget.type));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -72,8 +88,7 @@ class _ListViewScreenState extends State<ListViewScreen> {
                                       ),
                                     )),
                                     InkWell(
-                                      onTap: () => AppServices.pushTo(
-                                          context, VanueDetailsView()),
+                                      onTap: () => getRoute(),
                                       child: Container(
                                         padding: const EdgeInsets.symmetric(
                                             horizontal: 16, vertical: 10),

@@ -113,7 +113,9 @@ class _VanueDetailsViewState extends State<VanueDetailsView> {
                             isScrollControlled: true,
                             context: context,
                             builder: (BuildContext context) {
-                              return BookingCalenderView();
+                              return BookingCalenderView(
+                                type: "court",
+                              );
                             });
                       },
                       child: Text("View Schedule",

@@ -10,7 +10,8 @@ import 'package:q_arena_user_application/services/icons.dart';
 import '../../services/images.dart';
 
 class NearbyCourts extends StatefulWidget {
-  const NearbyCourts({super.key});
+  String type;
+  NearbyCourts({super.key, required this.type});
 
   @override
   State<NearbyCourts> createState() => _NearbyCourtsState();
@@ -52,7 +53,9 @@ class _NearbyCourtsState extends State<NearbyCourts> {
                     setState(() => _activeIndex = v);
                   }),
             ),
-            _activeIndex == 0 ? const MapView() : const ListViewScreen()
+            _activeIndex == 0
+                ? const MapView()
+                : ListViewScreen(type: widget.type)
           ],
         ),
       )),

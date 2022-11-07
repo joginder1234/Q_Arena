@@ -67,7 +67,11 @@ class _DashboardViewState extends State<DashboardView> {
                     title: "Trending Sports",
                     btnName: "View More",
                     ontap: () {
-                      AppServices.pushTo(context, NearbyCourts());
+                      AppServices.pushTo(
+                          context,
+                          NearbyCourts(
+                            type: "trainer",
+                          ));
                     },
                   ),
                   AppServices.addHeight(10.h),
