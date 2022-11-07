@@ -27,3 +27,9 @@ class MessageClass {
   MessageClass(this.name, this.message, this.time, this.image, this.isOnline,
       this.isSeen);
 }
+
+class CreditCardClass {
+  String cardNumber, cardHolderName, expDate, cardType;
+  CreditCardClass(
+      this.cardNumber, this.cardHolderName, this.expDate, this.cardType);
+}
