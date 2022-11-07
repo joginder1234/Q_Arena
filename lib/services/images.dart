@@ -25,4 +25,12 @@ class AppImages {
   static const String vanueBg = "assets/vanue.png";
   static const String onBoardImage = "assets/onBoard.png";
   static const String groundImage = "assets/ground.png";
+
+  //* Payment type logo */
+  static const String visaLogo = "assets/visa.png";
+  static const String masterCardLogo = "assets/mastercard.png";
+
+  /* Game Passes Images */
+  static const String playPassFront = "assets/play_pass.png";
+  static const String playPassback = "assets/play_qr.png";
 }

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:q_arena_user_application/components/flexible_button.dart';
+import 'package:q_arena_user_application/screens/payment/payment_desc.dart';
 import 'package:q_arena_user_application/screens/tournament/invitation_view.dart';
 import 'package:q_arena_user_application/services/app_services.dart';
 import 'package:q_arena_user_application/services/icons.dart';
@@ -26,139 +28,155 @@ class _InviteTeamMatesViewState extends State<InviteTeamMatesView> {
         elevation: 0,
       ),
       body: SafeArea(
-          child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Center(
-            child: Text("Invite Team mates",
-                style:
-                    AppStyles.largeHeader.copyWith(color: AppStyles.neonColor)),
-          ),
-          AppServices.addHeight(7.h),
-          Center(
-            child: Text("Aspire Football Pitch",
-                style:
-                    AppStyles.bodyMedium.copyWith(color: AppStyles.whiteColor)),
-          ),
-          AppServices.addHeight(7.h),
-          Center(
-            child: Text("12 June 2022- 06:45 pm to 8:00 pm",
-                style:
-                    AppStyles.bodyMedium.copyWith(color: AppStyles.whiteColor)),
-          ),
-          AppServices.addHeight(65.h),
-          Stack(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 18.h),
-                child: Image.asset(AppImages.inviteMarkers),
-              ),
-              Container(
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: List.generate(
-                          2,
-                          (index) => InkWell(
-                                onTap: () => AppServices.pushTo(
-                                    context, TeamInvitationView()),
-                                child: Image.asset(
-                                  AppIcons.addIcon,
-                                  height: 45.h,
-                                ),
-                              )),
-                    ),
-                    AppServices.addHeight(50.h),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: List.generate(
-                          3,
-                          (i) => Container(
-                                transform: Matrix4.translationValues(
-                                    0, i == 1 ? -20 : 0, 0),
-                                child: InkWell(
-                                  onTap: () => AppServices.pushTo(
-                                      context, TeamInvitationView()),
-                                  child: Image.asset(
-                                    AppIcons.addIcon,
-                                    height: 45.h,
-                                  ),
-                                ),
-                              )),
-                    ),
-                    AppServices.addHeight(25.h),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: List.generate(
-                          2,
-                          (index) => InkWell(
-                                onTap: () => AppServices.pushTo(
-                                    context, TeamInvitationView()),
-                                child: Image.asset(
-                                  AppIcons.addIcon,
-                                  height: 45.h,
-                                ),
-                              )),
-                    ),
-                    AppServices.addHeight(30.h),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: List.generate(
-                          3,
-                          (i) => Container(
-                                transform: Matrix4.translationValues(
-                                    0, i == 1 ? -20 : 0, 0),
-                                child: InkWell(
-                                  onTap: () => AppServices.pushTo(
-                                      context, TeamInvitationView()),
-                                  child: Image.asset(
-                                    AppIcons.addIcon,
-                                    height: 45.h,
-                                  ),
-                                ),
-                              )),
-                    ),
-                    AppServices.addHeight(45.h),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: List.generate(
-                          2,
-                          (index) => InkWell(
-                                onTap: () => AppServices.pushTo(
-                                    context, TeamInvitationView()),
-                                child: Image.asset(
-                                  AppIcons.addIcon,
-                                  height: 45.h,
-                                ),
-                              )),
-                    ),
-                    AppServices.addHeight(50.h),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: List.generate(
-                          3,
-                          (i) => Container(
-                                transform: Matrix4.translationValues(
-                                    0, i == 1 ? -20 : 0, 0),
-                                child: InkWell(
-                                  onTap: () => AppServices.pushTo(
-                                      context, TeamInvitationView()),
-                                  child: Image.asset(
-                                    AppIcons.addIcon,
-                                    height: 45.h,
-                                  ),
-                                ),
-                              )),
-                    ),
-                    AppServices.addHeight(50.h),
-                  ],
+          child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Center(
+              child: Text("Invite Team mates",
+                  style: AppStyles.largeHeader
+                      .copyWith(color: AppStyles.neonColor)),
+            ),
+            AppServices.addHeight(7.h),
+            Center(
+              child: Text("Aspire Football Pitch",
+                  style: AppStyles.bodyMedium
+                      .copyWith(color: AppStyles.whiteColor)),
+            ),
+            AppServices.addHeight(7.h),
+            Center(
+              child: Text("12 June 2022- 06:45 pm to 8:00 pm",
+                  style: AppStyles.bodyMedium
+                      .copyWith(color: AppStyles.whiteColor)),
+            ),
+            AppServices.addHeight(65.h),
+            Stack(
+              children: [
+                Padding(
+                  padding:
+                      EdgeInsets.symmetric(vertical: 18.h).copyWith(bottom: 0),
+                  child: Image.asset(AppImages.inviteMarkers),
                 ),
-              ),
-            ],
-          )
-        ],
+                Container(
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: List.generate(
+                            2,
+                            (index) => InkWell(
+                                  onTap: () => AppServices.pushTo(
+                                      context, TeamInvitationView()),
+                                  child: Image.asset(
+                                    AppIcons.addIcon,
+                                    height: 45.h,
+                                  ),
+                                )),
+                      ),
+                      AppServices.addHeight(50.h),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: List.generate(
+                            3,
+                            (i) => Container(
+                                  transform: Matrix4.translationValues(
+                                      0, i == 1 ? -20 : 0, 0),
+                                  child: InkWell(
+                                    onTap: () => AppServices.pushTo(
+                                        context, TeamInvitationView()),
+                                    child: Image.asset(
+                                      AppIcons.addIcon,
+                                      height: 45.h,
+                                    ),
+                                  ),
+                                )),
+                      ),
+                      AppServices.addHeight(25.h),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: List.generate(
+                            2,
+                            (index) => InkWell(
+                                  onTap: () => AppServices.pushTo(
+                                      context, TeamInvitationView()),
+                                  child: Image.asset(
+                                    AppIcons.addIcon,
+                                    height: 45.h,
+                                  ),
+                                )),
+                      ),
+                      AppServices.addHeight(30.h),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: List.generate(
+                            3,
+                            (i) => Container(
+                                  transform: Matrix4.translationValues(
+                                      0, i == 1 ? -20 : 0, 0),
+                                  child: InkWell(
+                                    onTap: () => AppServices.pushTo(
+                                        context, TeamInvitationView()),
+                                    child: Image.asset(
+                                      AppIcons.addIcon,
+                                      height: 45.h,
+                                    ),
+                                  ),
+                                )),
+                      ),
+                      AppServices.addHeight(45.h),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: List.generate(
+                            2,
+                            (index) => InkWell(
+                                  onTap: () => AppServices.pushTo(
+                                      context, TeamInvitationView()),
+                                  child: Image.asset(
+                                    AppIcons.addIcon,
+                                    height: 45.h,
+                                  ),
+                                )),
+                      ),
+                      AppServices.addHeight(50.h),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: List.generate(
+                            3,
+                            (i) => Container(
+                                  transform: Matrix4.translationValues(
+                                      0, i == 1 ? -20 : 0, 0),
+                                  child: InkWell(
+                                    onTap: () => AppServices.pushTo(
+                                        context, TeamInvitationView()),
+                                    child: Image.asset(
+                                      AppIcons.addIcon,
+                                      height: 45.h,
+                                    ),
+                                  ),
+                                )),
+                      ),
+                      // AppServices.addHeight(50.h),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       )),
+      bottomNavigationBar: Padding(
+        padding: EdgeInsets.symmetric(vertical: 10.h),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            FlexibleButton(
+                padding: 15,
+                btnName: "Pay Now",
+                onPress: () =>
+                    AppServices.pushTo(context, PaymentDescriptionView()))
+          ],
+        ),
+      ),
     );
   }
 }
