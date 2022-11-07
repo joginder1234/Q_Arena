@@ -75,6 +75,8 @@ List<CreditCardClass> cards = [
       "1526798632458697", "Jahid Mohammad", "01-23", AppImages.visaLogo),
   CreditCardClass(
       "4583219867250053", "Hassan", "07-28", AppImages.masterCardLogo),
+];
+
 List<ExperienceClass> experience = [
   ExperienceClass("LOVED IT", AppImages.smileEmoji),
   ExperienceClass("RELAXING", AppImages.handEmoji),
