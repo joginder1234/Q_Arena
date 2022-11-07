@@ -4,6 +4,7 @@ import 'package:flutter_share/flutter_share.dart';
 import 'package:q_arena_user_application/models/basic_models.dart';
 import 'package:q_arena_user_application/services/app_services.dart';
 import 'package:q_arena_user_application/services/icons.dart';
+import 'package:q_arena_user_application/services/images.dart';
 import 'package:q_arena_user_application/services/style_sheet.dart';
 
 List<String> socialBtn = [
@@ -68,3 +69,12 @@ Future<void> share(String title, String link) async {
       linkUrl: link,
       chooserTitle: 'Example Chooser Title');
 }
+
+List<ExperienceClass> experience = [
+  ExperienceClass("LOVED IT", AppImages.smileEmoji),
+  ExperienceClass("RELAXING", AppImages.handEmoji),
+  ExperienceClass("CHALLENGING", AppImages.trophyEmoji),
+  ExperienceClass("STRONG", AppImages.fireEmoji),
+  ExperienceClass("AMAZING", AppImages.amazingEmoji),
+  ExperienceClass("OTHER", AppImages.sadEmoji),
+];

@@ -27,3 +27,8 @@ class MessageClass {
   MessageClass(this.name, this.message, this.time, this.image, this.isOnline,
       this.isSeen);
 }
+
+class ExperienceClass {
+  String text, image;
+  ExperienceClass(this.text, this.image);
+}

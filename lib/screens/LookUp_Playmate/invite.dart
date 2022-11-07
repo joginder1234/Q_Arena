@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:q_arena_user_application/components/expanded_btn.dart';
 import 'package:q_arena_user_application/components/flexible_button.dart';
 import 'package:q_arena_user_application/screens/LookUp_Playmate/suggestedPlaymates.dart';
+import 'package:q_arena_user_application/screens/preference_selections/experience_rating.dart';
 import 'package:q_arena_user_application/services/app_services.dart';
 import 'package:q_arena_user_application/services/icons.dart';
 import 'package:q_arena_user_application/services/style_sheet.dart';
@@ -192,7 +193,10 @@ class _InviteViewState extends State<InviteView> {
                                   children: [
                                     ExpandedButtonView(
                                         btnName: "Decline",
-                                        onPress: () {},
+                                        onPress: () {
+                                          AppServices.pushTo(
+                                              context, ExperienceRatingView());
+                                        },
                                         bgColor: AppStyles.textColorBlack50),
                                     AppServices.addWidth(10.w),
                                     ExpandedButtonView(

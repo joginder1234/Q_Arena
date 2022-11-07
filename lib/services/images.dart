@@ -10,6 +10,13 @@ class AppImages {
   static const String profileImage = "assets/user_profile.png";
   static const String inviteMarkers = "assets/invite_marker.png";
   static const String memberPassImage = "assets/pass.png";
+  static const String smileEmoji = "assets/images/smileEmoji.png";
+  static const String handEmoji = "assets/images/handEmoji.png";
+  static const String trophyEmoji = "assets/images/trophyEmoji.png";
+  static const String fireEmoji = "assets/images/fireEmoji.png";
+  static const String amazingEmoji = "assets/images/amazingEmoji.png";
+  static const String sadEmoji = "assets/images/sadEmoji.png";
+  static const String playerImage = "assets/images/playerImage.png";
 
   /* Banner Images */
   static const String trendingBanner = "assets/banner_tranding.png";
