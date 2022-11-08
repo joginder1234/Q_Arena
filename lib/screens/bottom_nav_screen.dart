@@ -3,6 +3,11 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:q_arena_trainer/classes/basic_models.dart';
 import 'package:q_arena_trainer/components/my_nav_bar.dart';
+import 'package:q_arena_trainer/screens/chatting/chatting_view.dart';
+import 'package:q_arena_trainer/screens/history/booking_history.dart';
+import 'package:q_arena_trainer/screens/home/homepage.dart';
+import 'package:q_arena_trainer/screens/profile/profile_view.dart';
+import 'package:q_arena_trainer/screens/schedule/schedule_view.dart';
 import 'package:q_arena_trainer/services/icons.dart';
 
 class BottomNavScreenView extends StatefulWidget {
@@ -21,9 +26,17 @@ class _BottomNavScreenViewState extends State<BottomNavScreenView> {
     BottomNavItemsClass(AppIcons.messageIcon),
     BottomNavItemsClass(AppIcons.profileIcon)
   ];
+  final List<Widget> _screens = [
+    const Homepage(),
+    const MyScheduleView(),
+    const BookingHistoryView(),
+    const ChattingView(),
+    const ProfileView()
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: _screens[activeIndex],
       bottomNavigationBar: MyBottomNavBar(
           items: _items,
           ontap: (value) => setState(() => activeIndex = value),

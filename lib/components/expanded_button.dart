@@ -19,6 +19,8 @@ class ExpandedButtonView extends StatelessWidget {
       child: SizedBox(
         child: TextButton(
             style: ButtonStyle(
+                padding: MaterialStateProperty.all(
+                    EdgeInsets.symmetric(vertical: 17.h)),
                 backgroundColor: MaterialStateProperty.all(btnColor),
                 shape: MaterialStateProperty.all(RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(25.r)))),

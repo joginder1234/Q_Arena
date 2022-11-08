@@ -20,7 +20,8 @@ class CustomTextField extends StatelessWidget {
           hintText: hint,
           hintStyle:
               GetTextTheme.sf14_Regular.copyWith(color: AppColors.whiteColor),
-          contentPadding: const EdgeInsets.all(15),
+          contentPadding:
+              EdgeInsets.symmetric(horizontal: 15.w, vertical: 16.h),
           suffixIcon: icon == ""
               ? null
               : IconButton(

@@ -21,4 +21,5 @@ class AppIcons {
 
 class AppImages {
   static const String nameImage = "assets/images/name.png";
+  static const String dummyProfile = "assets/images/profile.jpeg";
 }

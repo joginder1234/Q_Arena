@@ -106,34 +106,41 @@ class _SignInViewState extends State<SignInView> {
                                   title: "Sign in"),
                             ],
                           ),
+                          // Row(
+                          //   children: [
+                          //     ExpandedButtonView(
+                          //       onTap: () {},
+                          //       title: "Sign up",
+                          //       btnColor: AppColors.darkBGColor,
+                          //     ),
+                          //   ],
+                          // ),
+                          FlutterService.addHeight(30.h),
                           Row(
                             children: [
-                              ExpandedButtonView(
-                                onTap: () {},
-                                title: "Sign up",
-                                btnColor: AppColors.darkBGColor,
-                              ),
+                              const Expanded(
+                                  child: SizedBox(
+                                child: Divider(
+                                    thickness: 1.2,
+                                    color: AppColors.blackLightColor),
+                              )),
+                              Padding(
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 10.w),
+                                  child: Text(
+                                    "OR",
+                                    textAlign: TextAlign.center,
+                                    style: GetTextTheme.sf14_Bold,
+                                  )),
+                              const Expanded(
+                                  child: SizedBox(
+                                child: Divider(
+                                    thickness: 1.2,
+                                    color: AppColors.blackLightColor),
+                              )),
                             ],
                           ),
-                          FlutterService.addHeight(30.h),
-                          Stack(
-                            children: [
-                              Divider(
-                                thickness: 1.h,
-                                color: AppColors.blackColor100,
-                              ),
-                              Align(
-                                  alignment: Alignment.center,
-                                  child: Container(
-                                    color: AppColors.whiteColor,
-                                    child: Text(
-                                      "OR",
-                                      textAlign: TextAlign.center,
-                                      style: GetTextTheme.sf14_Bold,
-                                    ),
-                                  ))
-                            ],
-                          ),
+
                           FlutterService.addHeight(30.h),
                           Row(
                             children: [
