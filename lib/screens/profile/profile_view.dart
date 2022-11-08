@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:q_arena_trainer/components/expanded_button.dart';
 import 'package:q_arena_trainer/screens/profile/profile_public_view.dart';
+import 'package:q_arena_trainer/screens/profile/set_location_view.dart';
 import 'package:q_arena_trainer/screens/profile/settings.dart';
 import 'package:q_arena_trainer/services/icons.dart';
 
@@ -99,8 +100,25 @@ class _ProfileViewState extends State<ProfileView> {
                                       Text("Functional Strength",
                                           style: GetTextTheme.sf12_Regular),
                                       FlutterService.addHeight(6.h),
-                                      Text("Aspire, Qatar, 44095",
-                                          style: GetTextTheme.sf12_Regular),
+                                      InkWell(
+                                        onTap: () => FlutterService.pushTo(
+                                            context, SetLocationView()),
+                                        child: Row(
+                                          children: [
+                                            Image.asset(AppIcons.locationIcon,
+                                                height: 10.h),
+                                            FlutterService.addWidth(5.w),
+                                            Expanded(
+                                              child: SizedBox(
+                                                child: Text(
+                                                    "Aspire, Qatar, 44095",
+                                                    style: GetTextTheme
+                                                        .sf12_Regular),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
                                       FlutterService.addHeight(6.h),
                                       Text("100 QAR per Hour",
                                           style: GetTextTheme.sf12_Regular),

@@ -11,7 +11,8 @@ import 'package:q_arena_trainer/screens/schedule/schedule_view.dart';
 import 'package:q_arena_trainer/services/icons.dart';
 
 class BottomNavScreenView extends StatefulWidget {
-  const BottomNavScreenView({super.key});
+  int screenIndex;
+  BottomNavScreenView({super.key, this.screenIndex = 0});
 
   @override
   State<BottomNavScreenView> createState() => _BottomNavScreenViewState();
@@ -33,12 +34,20 @@ class _BottomNavScreenViewState extends State<BottomNavScreenView> {
     const ChattingView(),
     const ProfileView()
   ];
+
+  @override
+  void initState() {
+    super.initState();
+    setState(() => activeIndex = widget.screenIndex);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: _screens[activeIndex],
       bottomNavigationBar: MyBottomNavBar(
           items: _items,
+          iconSize: 20,
           ontap: (value) => setState(() => activeIndex = value),
           activeIndex: activeIndex),
     );
