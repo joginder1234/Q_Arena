@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:q_arena_trainer/screens/Auth/sign_in.dart';
 import 'package:q_arena_trainer/screens/bottom_nav_screen.dart';
 import 'package:q_arena_trainer/services/get_services.dart';
 import 'package:q_arena_trainer/services/icons.dart';
@@ -25,7 +26,7 @@ class _SplashViewState extends State<SplashView> {
 
   getSession() {
     Future.delayed(Duration(milliseconds: 1500),
-        () => FlutterService.pushTo(context, BottomNavScreenView()));
+        () => FlutterService.pushTo(context, SignInView()));
   }
 
   @override
