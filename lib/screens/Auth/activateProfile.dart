@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:q_arena_trainer/components/custom_TextField.dart';
+import 'package:q_arena_trainer/components/custom_textfield.dart';
 import 'package:q_arena_trainer/components/custom_button_secondary.dart';
 import 'package:q_arena_trainer/components/expanded_button.dart';
 import 'package:q_arena_trainer/screens/bottom_nav_screen.dart';
