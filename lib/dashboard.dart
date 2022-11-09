@@ -27,7 +27,7 @@ class _DashboardViewState extends State<DashboardView> {
       body: SafeArea(
           child: Column(
         children: [
-          Dashboard_Appbar(),
+          const Dashboard_Appbar(),
           Expanded(
               child: SizedBox(
                   child: SingleChildScrollView(
@@ -57,7 +57,7 @@ class _DashboardViewState extends State<DashboardView> {
                             borderRadius: BorderRadius.circular(50.r),
                             border: Border.all(
                                 color: AppStyles.redHighLightColor, width: 3)),
-                        child: Center(
+                        child: const Center(
                           child: Icon(Icons.search),
                         ),
                       )
@@ -71,7 +71,7 @@ class _DashboardViewState extends State<DashboardView> {
                       AppServices.pushTo(
                           context,
                           NearbyCourts(
-                            type: "trainer",
+                            type: "court",
                           ));
                     },
                   ),
@@ -102,7 +102,12 @@ class _DashboardViewState extends State<DashboardView> {
                   ),
                   AppServices.addHeight(10.h),
                   DashboardSagmentDivider(
-                      title: "Public Tournaments", btnName: "Create Event"),
+                    title: "Public Tournaments",
+                    btnName: "Create Event",
+                    ontap: () {
+                      AppServices.pushTo(context, NearbyCourts(type: "court"));
+                    },
+                  ),
                   SizedBox(
                     height: 160.h,
                     width: AppServices.getScreenWidth(context),
@@ -161,7 +166,6 @@ class PlayMatesListSlider extends StatelessWidget {
                 7,
                 (index) => GestureDetector(
                       onTap: () => showModalBottomSheet(
-                        
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.vertical(
                                   top: Radius.circular(20.r))),

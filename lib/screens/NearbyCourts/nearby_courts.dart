@@ -4,6 +4,7 @@ import 'package:q_arena_user_application/components/app_textField.dart';
 import 'package:q_arena_user_application/components/custome_tab_switch.dart';
 import 'package:q_arena_user_application/screens/NearbyCourts/listView.dart';
 import 'package:q_arena_user_application/screens/NearbyCourts/mapView.dart';
+import 'package:q_arena_user_application/screens/profile_activity/profile_main.dart';
 import 'package:q_arena_user_application/services/app_services.dart';
 import 'package:q_arena_user_application/services/icons.dart';
 
@@ -24,13 +25,18 @@ class _NearbyCourtsState extends State<NearbyCourts> {
     return Scaffold(
       body: SafeArea(
           child: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: EdgeInsets.symmetric(horizontal: 15.w).copyWith(top: 12.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CircleAvatar(
-              radius: 20.r,
-              backgroundImage: const AssetImage(AppImages.profileImage),
+            GestureDetector(
+              onTap: () {
+                AppServices.pushTo(context, const MainProfileView());
+              },
+              child: CircleAvatar(
+                radius: 20.r,
+                backgroundImage: const AssetImage(AppImages.profileImage),
+              ),
             ),
             AppServices.addHeight(4),
             Padding(
@@ -53,9 +59,12 @@ class _NearbyCourtsState extends State<NearbyCourts> {
                     setState(() => _activeIndex = v);
                   }),
             ),
-            _activeIndex == 0
-                ? const MapView()
-                : ListViewScreen(type: widget.type)
+            Expanded(
+                child: SizedBox(
+              child: _activeIndex == 0
+                  ? const MapView()
+                  : ListViewScreen(type: widget.type),
+            ))
           ],
         ),
       )),

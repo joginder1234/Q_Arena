@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:q_arena_user_application/bottom_nav_bar.dart';
 import 'package:q_arena_user_application/components/flexible_button.dart';
-import 'package:q_arena_user_application/dashboard.dart';
 import 'package:q_arena_user_application/providers/app_data_provider.dart';
 import 'package:q_arena_user_application/services/app_services.dart';
 import 'package:q_arena_user_application/services/style_sheet.dart';
@@ -81,15 +80,17 @@ class _ChooseSportsViewState extends State<ChooseSportsView> {
                     }),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 10.h),
-              child: Center(
-                child: FlexibleButton(
-                    btnName: "Next",
-                    onPress: () =>
-                        AppServices.pushTo(context, BottomNavBarView())),
-              ),
-            )
+            db.getSportsList.any((element) => element.isActive == true)
+                ? Padding(
+                    padding: EdgeInsets.symmetric(vertical: 10.h),
+                    child: Center(
+                      child: FlexibleButton(
+                          btnName: "Next",
+                          onPress: () =>
+                              AppServices.pushTo(context, BottomNavBarView())),
+                    ),
+                  )
+                : const SizedBox()
           ],
         ),
       )),

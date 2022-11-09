@@ -5,6 +5,7 @@ import 'package:flutter_switch/flutter_switch.dart';
 import 'package:q_arena_user_application/components/flexible_button.dart';
 import 'package:q_arena_user_application/models/basic_models.dart';
 import 'package:q_arena_user_application/screens/preference_selections/agree_form.dart';
+import 'package:q_arena_user_application/screens/preference_selections/choose_sports.dart';
 import 'package:q_arena_user_application/services/images.dart';
 
 import '../../services/app_services.dart';
@@ -93,11 +94,10 @@ class _SAPScreenState extends State<SAPScreen> {
                         ),
                         AppServices.addHeight(11.h),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: List.generate(
                               types.length,
-                              (index) => Expanded(
-                                      child: InkWell(
+                              (index) => InkWell(
                                     onTap: () => setState(() => types[index]
                                         .isActive = !types[index].isActive),
                                     child: AnimatedScale(
@@ -116,6 +116,9 @@ class _SAPScreenState extends State<SAPScreen> {
                                           children: [
                                             AppServices.addWidth(10),
                                             Text(types[index].text,
+                                                textScaleFactor:
+                                                    AppServices.scaleFactorText(
+                                                        context),
                                                 style: AppStyles.bodySmall),
                                             AppServices.addWidth(5.w),
                                             types[index].isActive
@@ -132,7 +135,7 @@ class _SAPScreenState extends State<SAPScreen> {
                                         ),
                                       ),
                                     ),
-                                  ))),
+                                  )),
                         ),
                         AppServices.addHeight(20.h),
                         Text("Wheel Chair Assistance",
@@ -170,8 +173,9 @@ class _SAPScreenState extends State<SAPScreen> {
               AppServices.addHeight(40.h),
               FlexibleButton(
                   btnName: "Next",
-                  onPress: () =>
-                      AppServices.pushTo(context, ProfileAgreeForm()))
+                  onPress: () => switchValue == false
+                      ? AppServices.pushTo(context, const ChooseSportsView())
+                      : AppServices.pushTo(context, const ProfileAgreeForm()))
             ],
           ),
         ),
