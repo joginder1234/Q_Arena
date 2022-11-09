@@ -46,7 +46,7 @@ stepCreator(int currentStep, BuildContext context) => Align(
               textScaleFactor: AppServices.scaleFactorText(context),
               TextSpan(
                   text: "$currentStep",
-                  style: AppStyles.largeHeader,
+                  style: AppStyles.heading1,
                   children: [
                     TextSpan(text: "/6", style: AppStyles.bodySmall)
                   ])),

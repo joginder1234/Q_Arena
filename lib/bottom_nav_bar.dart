@@ -6,6 +6,7 @@ import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:q_arena_user_application/components/my_bottom_nav_bar.dart';
 import 'package:q_arena_user_application/configs/app_config.dart';
 import 'package:q_arena_user_application/dashboard.dart';
+import 'package:q_arena_user_application/screens/play_mates/playmate_main.dart';
 import 'package:q_arena_user_application/services/icons.dart';
 import 'package:q_arena_user_application/services/images.dart';
 import 'package:q_arena_user_application/services/style_sheet.dart';
@@ -32,7 +33,7 @@ class _BottomNavBarViewState extends State<BottomNavBarView> {
 
   List<Widget> _screens = [
     DashboardView(),
-    DashboardView(),
+    PlaymateMainView(),
     DashboardView(),
     DashboardView(),
     DashboardView(),

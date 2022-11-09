@@ -2,6 +2,7 @@ import 'package:flutter/animation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppStyles {
   /* Application Color Plate */
@@ -26,11 +27,11 @@ class AppStyles {
   /* Application Text Styles*/
 
   static TextStyle largeHeader =
-      TextStyle(fontSize: 30.sp, fontWeight: FontWeight.w700);
+      GoogleFonts.oswald(fontSize: 30.sp, fontWeight: FontWeight.w700);
   static TextStyle heading1 =
-      TextStyle(fontSize: 24.sp, fontWeight: FontWeight.w700);
+      GoogleFonts.oswald(fontSize: 24.sp, fontWeight: FontWeight.w700);
   static TextStyle heading2 =
-      TextStyle(fontSize: 20.sp, fontWeight: FontWeight.w700);
+      GoogleFonts.oswald(fontSize: 20.sp, fontWeight: FontWeight.w700);
   static TextStyle bodyLarge =
       TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w400);
   static TextStyle bodyMedium =

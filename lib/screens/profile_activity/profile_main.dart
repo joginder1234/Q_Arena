@@ -5,6 +5,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:q_arena_user_application/components/expanded_btn.dart';
 import 'package:q_arena_user_application/screens/profile_activity/my_activity.dart';
+import 'package:q_arena_user_application/screens/profile_activity/payment_history.dart';
 import 'package:q_arena_user_application/screens/profile_activity/upgrade_pass_info.dart';
 import 'package:q_arena_user_application/services/app_services.dart';
 import 'package:q_arena_user_application/services/icons.dart';
@@ -138,7 +139,8 @@ class _MainProfileViewState extends State<MainProfileView> {
                       bgColor: AppStyles.redHighLightColor,
                       txtColor: AppStyles.whiteColor,
                       padding: 12,
-                      onPress: () {}),
+                      onPress: () =>
+                          AppServices.pushTo(context, PaymentHistoryView())),
                 ],
               ),
               AppServices.addHeight(20.h),

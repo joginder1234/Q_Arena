@@ -28,4 +28,11 @@ class AppDataProvider extends ChangeNotifier {
         value;
     notifyListeners();
   }
+
+  int _selectedCard = 0;
+  int get getSelectedCard => _selectedCard;
+  selectCard(int index) {
+    _selectedCard = index;
+    notifyListeners();
+  }
 }

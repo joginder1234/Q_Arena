@@ -5,6 +5,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:q_arena_user_application/screens/NearbyCourts/nearby_courts.dart';
 import 'package:q_arena_user_application/screens/NearbyCourts/vanue_details.dart';
+import 'package:q_arena_user_application/screens/play_mates/playmate_bottom_bar.dart';
 import 'package:q_arena_user_application/screens/profile_activity/profile_main.dart';
 import 'package:q_arena_user_application/screens/tournament/create_tournament.dart';
 import 'package:q_arena_user_application/services/app_services.dart';
@@ -75,119 +76,150 @@ class _DashboardViewState extends State<DashboardView> {
                     },
                   ),
                   AppServices.addHeight(10.h),
-                  CarouselSlider(
-                    items: List.generate(
-                        4,
-                        (index) => GestureDetector(
-                            onTap: () =>
-                                AppServices.pushTo(context, VanueDetailsView()),
-                            child: Image.asset(AppImages.trendingBanner))),
-                    options: CarouselOptions(
-                      autoPlay: false,
-                      enlargeCenterPage: false,
-                      viewportFraction: 0.85,
-                      aspectRatio: 2.0,
-                      initialPage: 1,
+                  SizedBox(
+                    height: 160.h,
+                    width: AppServices.getScreenWidth(context),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      physics: BouncingScrollPhysics(),
+                      child: Row(
+                        children: List.generate(
+                            4,
+                            (index) => Padding(
+                                  padding: EdgeInsets.only(right: 10.w),
+                                  child: GestureDetector(
+                                      onTap: () => AppServices.pushTo(
+                                          context, VanueDetailsView()),
+                                      child: Image.asset(
+                                        AppImages.trendingBanner,
+                                        height: 157.h,
+                                        scale: AppServices.scaleFactorText(
+                                            context),
+                                      )),
+                                )),
+                      ),
                     ),
                   ),
                   AppServices.addHeight(10.h),
                   DashboardSagmentDivider(
                       title: "Public Tournaments", btnName: "Create Event"),
-                  CarouselSlider(
-                    items: List.generate(
-                        4,
-                        (index) => GestureDetector(
-                              onTap: () => AppServices.pushTo(
-                                  context, CreateTournamentView()),
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 3.w),
-                                child: Image.asset(AppImages.publicBanner),
-                              ),
-                            )),
-                    options: CarouselOptions(
-                      autoPlay: false,
-                      enlargeCenterPage: false,
-                      viewportFraction: 0.85,
-                      aspectRatio: 2,
-                      initialPage: 1,
+                  SizedBox(
+                    height: 160.h,
+                    width: AppServices.getScreenWidth(context),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      physics: BouncingScrollPhysics(),
+                      child: Row(
+                        children: List.generate(
+                            4,
+                            (index) => Padding(
+                                  padding: EdgeInsets.only(right: 10.w),
+                                  child: GestureDetector(
+                                      onTap: () => AppServices.pushTo(
+                                          context, VanueDetailsView()),
+                                      child: Image.asset(
+                                        AppImages.publicBanner,
+                                        height: 157.h,
+                                        scale: AppServices.scaleFactorText(
+                                            context),
+                                      )),
+                                )),
+                      ),
                     ),
                   ),
                   AppServices.addHeight(10.h),
                   DashboardSagmentDivider(
                       title: "Suggested playmates", btnName: "View More"),
                   AppServices.addHeight(10.h),
-                  SizedBox(
-                    width: AppServices.getScreenWidth(context),
-                    height: 160,
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: List.generate(
-                            7,
-                            (index) => Container(
-                                  margin: EdgeInsets.only(right: 7.w),
-                                  height: 159.h,
-                                  width: 100.w,
-                                  decoration: BoxDecoration(
-                                      image: const DecorationImage(
-                                          image: AssetImage(
-                                              AppImages.playMateBanner),
-                                          fit: BoxFit.cover),
-                                      borderRadius:
-                                          BorderRadius.circular(12.r)),
-                                  child: Stack(
-                                    children: [
-                                      Container(
-                                        decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(12.r),
-                                            gradient: const LinearGradient(
-                                                stops: [
-                                                  0.2,
-                                                  0.5,
-                                                  0.6
-                                                ],
-                                                colors: [
-                                                  AppStyles.textColorBlack100,
-                                                  Colors.transparent,
-                                                  Colors.transparent
-                                                ],
-                                                begin: Alignment.bottomCenter,
-                                                end: Alignment.topCenter)),
-                                      ),
-                                      Align(
-                                        alignment: Alignment.bottomLeft,
-                                        child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 10.w, vertical: 15.h),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.min,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                "Amatul, 30",
-                                                style: AppStyles.captionLarge
-                                                    .copyWith(
-                                                        color: AppStyles
-                                                            .whiteColor),
-                                              )
-                                            ],
-                                          ),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                )),
-                      ),
-                    ),
-                  )
+                  PlayMatesListSlider()
                 ],
               ),
             ),
           )))
         ],
       )),
+    );
+  }
+}
+
+class PlayMatesListSlider extends StatelessWidget {
+  const PlayMatesListSlider({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: AppServices.getScreenWidth(context),
+      height: 160,
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: [
+            AppServices.addWidth(7.w),
+            ...List.generate(
+                7,
+                (index) => GestureDetector(
+                      onTap: () => showModalBottomSheet(
+                        
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.vertical(
+                                  top: Radius.circular(20.r))),
+                          context: context,
+                          builder: (context) => PlayMateBottomSheet()),
+                      child: Container(
+                        margin: EdgeInsets.only(right: 7.w),
+                        height: 159.h,
+                        width: 100.w,
+                        decoration: BoxDecoration(
+                            image: const DecorationImage(
+                                image: AssetImage(AppImages.playMateBanner),
+                                fit: BoxFit.cover),
+                            borderRadius: BorderRadius.circular(12.r)),
+                        child: Stack(
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(12.r),
+                                  gradient: const LinearGradient(
+                                      stops: [
+                                        0.2,
+                                        0.5,
+                                        0.6
+                                      ],
+                                      colors: [
+                                        AppStyles.textColorBlack100,
+                                        Colors.transparent,
+                                        Colors.transparent
+                                      ],
+                                      begin: Alignment.bottomCenter,
+                                      end: Alignment.topCenter)),
+                            ),
+                            Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 10.w, vertical: 15.h),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Amatul, 30",
+                                      style: AppStyles.captionLarge.copyWith(
+                                          color: AppStyles.whiteColor),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ))
+          ],
+        ),
+      ),
     );
   }
 }
@@ -205,8 +237,9 @@ class DashboardSagmentDivider extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(title,
-            style: AppStyles.bodyMedium
-                .copyWith(color: AppStyles.textColorBlack50)),
+            style: AppStyles.bodyMedium.copyWith(
+                color: AppStyles.textColorBlack50,
+                fontWeight: FontWeight.w700)),
         TextButton(
             onPressed: ontap != null ? () => ontap!() : null,
             child: Text(btnName,

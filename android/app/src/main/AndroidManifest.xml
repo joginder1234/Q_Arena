@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.q_arena_user_application">
    <application
-        android:label="q_arena_user_application"
+        android:label="Q Arena"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
